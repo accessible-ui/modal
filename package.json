@@ -83,7 +83,7 @@
   },
   "dependencies": {
     "@reach/auto-id": "^0.6.1",
-    "@react-hook/merged-ref": "^1.0.6",
+    "@react-hook/merged-ref": "^1.0.7",
     "@react-hook/passive-layout-effect": "^1.0.2",
     "@react-hook/switch": "^1.0.4",
     "clsx": "^1.0.4",
@@ -92,8 +92,8 @@
     "tabbable": "^4.0.0"
   },
   "peerDependencies": {
+    "prop-types": ">=15.7.2",
     "react": ">=16.8",
-    "react-dom": ">=16.8",
-    "prop-types": ">=15.7.2"
+    "react-dom": ">=16.8"
   }
 }

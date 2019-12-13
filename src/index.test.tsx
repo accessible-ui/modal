@@ -163,10 +163,7 @@ describe('<Dialog>', () => {
   it(`should apply user defined openStyle and closedStyle`, () => {
     const result = render(
       <Modal>
-        <Dialog
-          closedStyle={{display: 'none'}}
-          openStyle={{display: 'block'}}
-        >
+        <Dialog closedStyle={{display: 'none'}} openStyle={{display: 'block'}}>
           <div>Hello world</div>
         </Dialog>
 
@@ -326,10 +323,7 @@ describe('<Trigger>', () => {
           <div>Hello world</div>
         </Dialog>
 
-        <Trigger
-          closedStyle={{display: 'none'}}
-          openStyle={{display: 'block'}}
-        >
+        <Trigger closedStyle={{display: 'none'}} openStyle={{display: 'block'}}>
           <button>open me</button>
         </Trigger>
       </Modal>
@@ -348,7 +342,7 @@ describe('<Close>', () => {
         <Dialog>
           <div>
             <Close>
-              <button data-testid='close'>Close me</button>
+              <button data-testid="close">Close me</button>
             </Close>
             Hello world
           </div>

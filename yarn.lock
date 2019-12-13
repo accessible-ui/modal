@@ -1080,10 +1080,10 @@
   resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.6.1.tgz#af30c153787a335cfb258289537d5ea355688821"
   integrity sha512-t3uhdZwalO3Mph+CUdFIvMcYsMtRZoBHE5rw/+3UvQxV+AeQGNqmtlOix9mq3rOpxi0KEaf1q4CjWx4myFXkRQ==
 
-"@react-hook/merged-ref@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@react-hook/merged-ref/-/merged-ref-1.0.6.tgz#04d08ade11b35c1268eaf1c9c1b058808d28cc8b"
-  integrity sha512-2rXZEH5GNZCBf4SZnSShMDEkUlLMRgpByOLBGIWyqzHegJBhX5eTWyEnshtnO/5Ys0V8WPI9Tiym8R1/PWs2Ow==
+"@react-hook/merged-ref@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@react-hook/merged-ref/-/merged-ref-1.0.7.tgz#3e2bf1f6cad5645932140129dfeef6568acd2742"
+  integrity sha512-9hhiI/Ru7++IJiG+yVjyi+ne/6p+GHvk8ldI1eo9y2VLO5Uk0B2+Zs04WVMTLCQOpuw+F8hLJJpjH5clbjW1OQ==
 
 "@react-hook/passive-layout-effect@^1.0.2":
   version "1.0.2"

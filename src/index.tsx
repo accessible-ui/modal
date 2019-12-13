@@ -138,8 +138,9 @@ export interface CloseProps {
 export const Close: React.FC<CloseProps> = React.forwardRef<
   JSX.Element | React.ReactElement,
   CloseProps
-  >(({children}, ref) => {
+>(({children}, ref) => {
   const {close, isOpen, id} = useModal()
+  ref = useMergedRef(children.props.ref, ref)
   const onClick = useCallback(
     e => {
       close()

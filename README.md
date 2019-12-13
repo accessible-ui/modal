@@ -81,11 +81,28 @@ const Component = () => (
 
 ### `<Close>`
 
+This is a convenience component that wraps any React element and adds an onClick handler which closes the modal.
+
 #### Props
 
-| Prop | Type | Default | Required? | Description |
-| ---- | ---- | ------- | --------- | ----------- |
-|      |      |         |           |             |
+| Prop     | Type                 | Default     | Required? | Description                                                                                                                |
+| -------- | -------------------- | ----------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| children | `React.ReactElement` | `undefined` | Yes       | The child is cloned by this component and has aria attributes injected into its props as well as the events defined above. |
+
+```jsx harmony
+<Close>
+  <button className="my-button">Close me</button>
+</Close>
+
+// <button
+//   class="my-button"
+//   aria-controls="popover--12"
+//   aria-haspopup="dialog"
+//   aria-expanded="false"
+// >
+//   Close me
+// </button>
+```
 
 ### `useModal()`
 
