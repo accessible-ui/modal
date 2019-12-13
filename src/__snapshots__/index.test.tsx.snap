@@ -1,0 +1,724 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal> should have a custom id 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--foobar"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--foobar"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Modal> should provide context to function child 1`] = `
+Object {
+  "close": [Function],
+  "id": "modal--1",
+  "isOpen": false,
+  "modalRef": Object {
+    "current": null,
+  },
+  "open": [Function],
+  "toggle": [Function],
+  "triggerRef": Object {
+    "current": null,
+  },
+}
+`;
+
+exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--20"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--20"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: initially open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--20"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--20"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: still closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--20"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--20"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: still open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--20"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--20"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should apply custom classname when opened or closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    class="custom"
+    id="modal--12"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--12"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should apply custom classname when opened or closed: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="custom modal--open"
+    id="modal--12"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--12"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should apply user defined openClassName and closedClassName 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    class="closed"
+    id="modal--14"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--14"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should apply user defined openClassName and closedClassName: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="open"
+    id="modal--14"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--14"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should apply user defined openStyle and closedStyle 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--16"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1; display: none;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--16"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should apply user defined openStyle and closedStyle: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--16"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1; display: block;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--16"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should assign to custom styles when opened or closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--10"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1; font-size: 2rem;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--10"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should assign to custom styles when opened or closed: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--10"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1; font-size: 2rem;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--10"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should be initially open when defined as such: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--18"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--18"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should be initially open when defined as such: initially open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--18"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--18"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should close on escape key: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--5"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--5"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should close on escape key: closed initially 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--5"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--5"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should close on escape key: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--5"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--5"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should open and close on ModalToggle click: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--2"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--2"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should open and close on ModalToggle click: closed initially 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--2"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--2"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should open and close on ModalToggle click: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--2"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--2"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> should render into a portal by custom selector 1`] = `
+<body>
+  <div
+    class="portals"
+  >
+    <div
+      aria-hidden="false"
+      aria-modal="false"
+      class="modal--open"
+      id="modal--28"
+      role="dialog"
+      style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+    >
+      Hello world
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="modal--28"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+    >
+      open me
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<ModalBox> should render into a portal by custom selector object 1`] = `
+<body>
+  <div
+    class="portals"
+  >
+    <div
+      aria-hidden="false"
+      aria-modal="false"
+      class="modal--open"
+      id="modal--26"
+      role="dialog"
+      style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+    >
+      Hello world
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="modal--26"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+    >
+      open me
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<ModalBox> should render into a portal by default ID 1`] = `
+<body>
+  <div
+    id="portals"
+  >
+    <div
+      aria-hidden="false"
+      aria-modal="false"
+      class="modal--open"
+      id="modal--24"
+      role="dialog"
+      style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+    >
+      Hello world
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="modal--24"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+    >
+      open me
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<ModalBox> shouldn't close on escape key if prop is false: closed initially 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--8"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--8"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> shouldn't close on escape key if prop is false: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--8"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--8"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalBox> shouldn't close on escape key if prop is false: still open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--8"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--8"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalToggle> should have openClassName and closedClassName 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--30"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--30"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    class="closed"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalToggle> should have openClassName and closedClassName: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--30"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--30"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    class="open"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalToggle> should have openStyle and closedStyle 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--32"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--32"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    style="display: none;"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<ModalToggle> should have openStyle and closedStyle: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="modal--open"
+    id="modal--32"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--32"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+    style="display: block;"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`useModal() should return context 1`] = `
+Object {
+  "close": [Function],
+  "id": "modal--36",
+  "isOpen": false,
+  "modalRef": Object {
+    "current": null,
+  },
+  "open": [Function],
+  "toggle": [Function],
+  "triggerRef": Object {
+    "current": null,
+  },
+}
+`;

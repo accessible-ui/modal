@@ -1,16 +1,23 @@
 {
   "name": "@accessible/modal",
   "version": "1.0.0",
-  "homepage": "https://github.com/jaredLunde/accessible#readme",
-  "repository": "github:jaredLunde/accessible",
-  "bugs": "https://github.com/jaredLunde/accessible/issues",
-  "author": "Jared Lunde <jared@BeStellar.co> (https://jaredLunde.com)",
+  "homepage": "https://github.com/accessible-ui/modal#readme",
+  "repository": "github:accessible-ui/modal",
+  "bugs": "https://github.com/accessible-ui/modal/issues",
+  "author": "Jared Lunde <jared.lunde@gmail.com> (https://jaredLunde.com)",
   "license": "MIT",
   "description": "",
   "keywords": [
     "react",
     "react component",
-    "modal"
+    "modal",
+    "accessible modal",
+    "aria modal",
+    "a11y modal",
+    "accessible modal",
+    "modal component",
+    "react modal component",
+    "react modal"
   ],
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
@@ -55,6 +62,8 @@
     "@types/react-dom": "latest",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
+    "babel-plugin-optimize-react": "^0.0.4",
+    "babel-plugin-typescript-to-proptypes": "^1.1.0",
     "cross-env": "latest",
     "eslint": "latest",
     "eslint-import-resolver-jest": "latest",
@@ -72,6 +81,15 @@
     "ts-jest": "latest",
     "typescript": "latest"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@reach/auto-id": "^0.6.1",
+    "@react-hook/merged-ref": "^1.0.6",
+    "@react-hook/passive-layout-effect": "^1.0.2",
+    "@react-hook/switch": "^1.0.4",
+    "clsx": "^1.0.4",
+    "raf": "^3.4.1",
+    "react-portalize": "^2.0.2",
+    "tabbable": "^4.0.0"
+  },
   "peerDependencies": {}
 }

@@ -18,12 +18,13 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-ts-ignore": "off",
     "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": "off",
     "no-console": "off",
     "no-prototype-builtins": "off",
     "react/no-children-prop": "off",
     "react/display-name": "off",
-    "react/prop-types": [2, {"ignore": ["children"]}]
+    "react/prop-types": "off"
   },
   "settings": {
     "react": {

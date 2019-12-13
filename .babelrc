@@ -8,10 +8,12 @@
           "targets": {
             "node": "8"
           }
-        }
+        },
+        "devExpression": false
       }
     ]
   ],
+  "plugins": ["optimize-react", "typescript-to-proptypes"],
   "env": {
     "es": {
       "presets": [
@@ -24,7 +26,8 @@
                 "browsers": "> 2%"
               }
             },
-            "objectAssign": false
+            "objectAssign": false,
+            "devExpression": false
           }
         ]
       ]
