@@ -150,7 +150,7 @@ export const Close: React.FC<CloseProps> = ({children}) => {
     'aria-haspopup': 'dialog',
     'aria-expanded': String(isOpen),
     'aria-label': children.props['aria-label'] || 'Close',
-    onClick
+    onClick,
   })
 }
 
@@ -261,4 +261,5 @@ if (__DEV__) {
   Modal.displayName = 'Modal'
   Dialog.displayName = 'Dialog'
   Trigger.displayName = 'Trigger'
+  Close.displayName = 'Close'
 }
