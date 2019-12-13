@@ -91,5 +91,9 @@
     "react-portalize": "^2.0.2",
     "tabbable": "^4.0.0"
   },
-  "peerDependencies": {}
+  "peerDependencies": {
+    "react": ">=16.8",
+    "react-dom": ">=16.8",
+    "prop-types": ">=15.7.2"
+  }
 }

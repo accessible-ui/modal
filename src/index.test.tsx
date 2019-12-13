@@ -2,19 +2,27 @@
 import React from 'react'
 import {renderHook} from '@testing-library/react-hooks'
 import {render, fireEvent} from '@testing-library/react'
-import {Modal, ModalToggle, ModalBox, useControls, useIsOpen, useModal} from './index'
+import {
+  Modal,
+  Trigger,
+  Dialog,
+  Close,
+  useControls,
+  useIsOpen,
+  useModal,
+} from './index'
 
 describe('<Modal>', () => {
   it('should have a custom id', () => {
     const result = render(
       <Modal id="foobar">
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -28,7 +36,7 @@ describe('<Modal>', () => {
       <Modal>
         {context => {
           cxt = context
-          return <div/>
+          return <div />
         }}
       </Modal>
     )
@@ -37,17 +45,17 @@ describe('<Modal>', () => {
   })
 })
 
-describe('<ModalBox>', () => {
-  it('should open and close on ModalToggle click', () => {
+describe('<Dialog>', () => {
+  it('should open and close on Trigger click', () => {
     const result = render(
       <Modal>
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -61,13 +69,13 @@ describe('<ModalBox>', () => {
   it('should close on escape key', () => {
     const result = render(
       <Modal>
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -81,13 +89,13 @@ describe('<ModalBox>', () => {
   it(`shouldn't close on escape key if prop is false`, () => {
     const result = render(
       <Modal>
-        <ModalBox closeOnEscape={false}>
+        <Dialog closeOnEscape={false}>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -101,13 +109,13 @@ describe('<ModalBox>', () => {
   it(`should assign to custom styles when opened or closed`, () => {
     const result = render(
       <Modal>
-        <ModalBox>
+        <Dialog>
           <div style={{fontSize: '2rem'}}>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -119,13 +127,13 @@ describe('<ModalBox>', () => {
   it(`should apply custom classname when opened or closed`, () => {
     const result = render(
       <Modal>
-        <ModalBox>
+        <Dialog>
           <div className="custom">Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -137,13 +145,13 @@ describe('<ModalBox>', () => {
   it(`should apply user defined openClassName and closedClassName`, () => {
     const result = render(
       <Modal>
-        <ModalBox closedClassName="closed" openClassName="open">
+        <Dialog closedClassName="closed" openClassName="open">
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -155,16 +163,16 @@ describe('<ModalBox>', () => {
   it(`should apply user defined openStyle and closedStyle`, () => {
     const result = render(
       <Modal>
-        <ModalBox
+        <Dialog
           closedStyle={{display: 'none'}}
           openStyle={{display: 'block'}}
         >
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -176,13 +184,13 @@ describe('<ModalBox>', () => {
   it(`should be initially open when defined as such`, () => {
     const result = render(
       <Modal defaultOpen>
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -194,13 +202,13 @@ describe('<ModalBox>', () => {
   it(`should act like a controlled component when 'open' prop is specified`, () => {
     const result = render(
       <Modal open>
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -210,13 +218,13 @@ describe('<ModalBox>', () => {
 
     result.rerender(
       <Modal open={false}>
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -232,13 +240,13 @@ describe('<ModalBox>', () => {
 
     const result = render(
       <Modal open>
-        <ModalBox portal>
+        <Dialog portal>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -254,13 +262,13 @@ describe('<ModalBox>', () => {
 
     const result = render(
       <Modal open>
-        <ModalBox portal={{container: '.portals'}}>
+        <Dialog portal={{container: '.portals'}}>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -276,13 +284,13 @@ describe('<ModalBox>', () => {
 
     const result = render(
       <Modal open>
-        <ModalBox portal=".portals">
+        <Dialog portal=".portals">
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle>
+        <Trigger>
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -292,17 +300,17 @@ describe('<ModalBox>', () => {
   })
 })
 
-describe('<ModalToggle>', () => {
+describe('<Trigger>', () => {
   it('should have openClassName and closedClassName', () => {
     const result = render(
       <Modal>
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle closedClassName="closed" openClassName="open">
+        <Trigger closedClassName="closed" openClassName="open">
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -314,16 +322,16 @@ describe('<ModalToggle>', () => {
   it('should have openStyle and closedStyle', () => {
     const result = render(
       <Modal>
-        <ModalBox>
+        <Dialog>
           <div>Hello world</div>
-        </ModalBox>
+        </Dialog>
 
-        <ModalToggle
+        <Trigger
           closedStyle={{display: 'none'}}
           openStyle={{display: 'block'}}
         >
           <button>open me</button>
-        </ModalToggle>
+        </Trigger>
       </Modal>
     )
 
@@ -333,10 +341,39 @@ describe('<ModalToggle>', () => {
   })
 })
 
+describe('<Close>', () => {
+  it('should close the modal', () => {
+    const result = render(
+      <Modal defaultOpen={true}>
+        <Dialog>
+          <div>
+            <Close>
+              <button data-testid='close'>Close me</button>
+            </Close>
+            Hello world
+          </div>
+        </Dialog>
+
+        <Trigger closedClassName="closed" openClassName="open">
+          <button>open me</button>
+        </Trigger>
+      </Modal>
+    )
+
+    expect(result.asFragment()).toMatchSnapshot()
+    fireEvent.click(result.getByTestId('close'))
+    expect(result.asFragment()).toMatchSnapshot('closed')
+  })
+})
+
 describe('useControls()', () => {
   it('should have toggle, open, close keys', () => {
     const {result} = renderHook(() => useControls(), {wrapper: Modal})
-    expect(Object.keys(result.current)).toStrictEqual(['open', 'close', 'toggle'])
+    expect(Object.keys(result.current)).toStrictEqual([
+      'open',
+      'close',
+      'toggle',
+    ])
   })
 })
 

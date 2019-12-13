@@ -34,25 +34,21 @@ An accessible modal component for React
 ## Quick Start
 
 ```jsx harmony
-import {Modal, ModalBox, ModalToggle} from '@accessible/modal'
+import {Modal, Dialog, Trigger, Close} from '@accessible/modal'
 
 const Component = () => (
   <Modal>
-    <ModalBox>
-      <div className='my-modal'>
-        <ModalToggle>
-          <button>
-            Close me
-          </button>
-        </ModalToggle>
+    <Dialog>
+      <div className="my-modal">
+        <Close>
+          <button>Close me</button>
+        </Close>
       </div>
-    </ModalBox>
+    </Dialog>
 
-    <ModalToggle>
-      <button>
-        Open me
-      </button>
-    </ModalToggle>
+    <Trigger>
+      <button>Open me</button>
+    </Trigger>
   </Modal>
 )
 ```
@@ -67,7 +63,7 @@ const Component = () => (
 | ---- | ---- | ------- | --------- | ----------- |
 |      |      |         |           |             |
 
-### `<ModalBox>`
+### `<Dialog>`
 
 #### Props
 
@@ -75,7 +71,15 @@ const Component = () => (
 | ---- | ---- | ------- | --------- | ----------- |
 |      |      |         |           |             |
 
-### `<ModalToggle>`
+### `<Trigger>`
+
+#### Props
+
+| Prop | Type | Default | Required? | Description |
+| ---- | ---- | ------- | --------- | ----------- |
+|      |      |         |           |             |
+
+### `<Close>`
 
 #### Props
 

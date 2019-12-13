@@ -1,43 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Modal> should have a custom id 1`] = `
+exports[`<Close> should close the modal 1`] = `
 <DocumentFragment>
   <div
-    aria-hidden="true"
+    aria-hidden="false"
     aria-modal="false"
-    id="modal--foobar"
+    class="modal--open"
+    id="modal--34"
     role="dialog"
     style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
   >
+    <button
+      aria-controls="modal--34"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+      aria-label="Close"
+      data-testid="close"
+    >
+      Close me
+    </button>
     Hello world
   </div>
   <button
-    aria-controls="modal--foobar"
-    aria-expanded="false"
+    aria-controls="modal--34"
+    aria-expanded="true"
     aria-haspopup="dialog"
+    class="open"
   >
     open me
   </button>
 </DocumentFragment>
 `;
 
-exports[`<Modal> should provide context to function child 1`] = `
-Object {
-  "close": [Function],
-  "id": "modal--1",
-  "isOpen": false,
-  "modalRef": Object {
-    "current": null,
-  },
-  "open": [Function],
-  "toggle": [Function],
-  "triggerRef": Object {
-    "current": null,
-  },
-}
+exports[`<Close> should close the modal: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--34"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    <button
+      aria-controls="modal--34"
+      aria-expanded="false"
+      aria-haspopup="dialog"
+      aria-label="Close"
+      data-testid="close"
+    >
+      Close me
+    </button>
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--34"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    class="closed"
+  >
+    open me
+  </button>
+</DocumentFragment>
 `;
 
-exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: closed 1`] = `
+exports[`<Dialog> should act like a controlled component when 'open' prop is specified: closed 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -58,7 +84,7 @@ exports[`<ModalBox> should act like a controlled component when 'open' prop is s
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: initially open 1`] = `
+exports[`<Dialog> should act like a controlled component when 'open' prop is specified: initially open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -80,7 +106,7 @@ exports[`<ModalBox> should act like a controlled component when 'open' prop is s
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: still closed 1`] = `
+exports[`<Dialog> should act like a controlled component when 'open' prop is specified: still closed 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -101,7 +127,7 @@ exports[`<ModalBox> should act like a controlled component when 'open' prop is s
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should act like a controlled component when 'open' prop is specified: still open 1`] = `
+exports[`<Dialog> should act like a controlled component when 'open' prop is specified: still open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -123,7 +149,7 @@ exports[`<ModalBox> should act like a controlled component when 'open' prop is s
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should apply custom classname when opened or closed 1`] = `
+exports[`<Dialog> should apply custom classname when opened or closed 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -145,7 +171,7 @@ exports[`<ModalBox> should apply custom classname when opened or closed 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should apply custom classname when opened or closed: open 1`] = `
+exports[`<Dialog> should apply custom classname when opened or closed: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -167,7 +193,7 @@ exports[`<ModalBox> should apply custom classname when opened or closed: open 1`
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should apply user defined openClassName and closedClassName 1`] = `
+exports[`<Dialog> should apply user defined openClassName and closedClassName 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -189,7 +215,7 @@ exports[`<ModalBox> should apply user defined openClassName and closedClassName 
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should apply user defined openClassName and closedClassName: open 1`] = `
+exports[`<Dialog> should apply user defined openClassName and closedClassName: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -211,7 +237,7 @@ exports[`<ModalBox> should apply user defined openClassName and closedClassName:
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should apply user defined openStyle and closedStyle 1`] = `
+exports[`<Dialog> should apply user defined openStyle and closedStyle 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -232,7 +258,7 @@ exports[`<ModalBox> should apply user defined openStyle and closedStyle 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should apply user defined openStyle and closedStyle: open 1`] = `
+exports[`<Dialog> should apply user defined openStyle and closedStyle: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -254,7 +280,7 @@ exports[`<ModalBox> should apply user defined openStyle and closedStyle: open 1`
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should assign to custom styles when opened or closed 1`] = `
+exports[`<Dialog> should assign to custom styles when opened or closed 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -275,7 +301,7 @@ exports[`<ModalBox> should assign to custom styles when opened or closed 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should assign to custom styles when opened or closed: open 1`] = `
+exports[`<Dialog> should assign to custom styles when opened or closed: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -297,7 +323,7 @@ exports[`<ModalBox> should assign to custom styles when opened or closed: open 1
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should be initially open when defined as such: closed 1`] = `
+exports[`<Dialog> should be initially open when defined as such: closed 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -318,7 +344,7 @@ exports[`<ModalBox> should be initially open when defined as such: closed 1`] = 
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should be initially open when defined as such: initially open 1`] = `
+exports[`<Dialog> should be initially open when defined as such: initially open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -340,7 +366,7 @@ exports[`<ModalBox> should be initially open when defined as such: initially ope
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should close on escape key: closed 1`] = `
+exports[`<Dialog> should close on escape key: closed 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -361,7 +387,7 @@ exports[`<ModalBox> should close on escape key: closed 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should close on escape key: closed initially 1`] = `
+exports[`<Dialog> should close on escape key: closed initially 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -382,7 +408,7 @@ exports[`<ModalBox> should close on escape key: closed initially 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should close on escape key: open 1`] = `
+exports[`<Dialog> should close on escape key: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -404,7 +430,7 @@ exports[`<ModalBox> should close on escape key: open 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should open and close on ModalToggle click: closed 1`] = `
+exports[`<Dialog> should open and close on Trigger click: closed 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -425,7 +451,7 @@ exports[`<ModalBox> should open and close on ModalToggle click: closed 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should open and close on ModalToggle click: closed initially 1`] = `
+exports[`<Dialog> should open and close on Trigger click: closed initially 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -446,7 +472,7 @@ exports[`<ModalBox> should open and close on ModalToggle click: closed initially
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should open and close on ModalToggle click: open 1`] = `
+exports[`<Dialog> should open and close on Trigger click: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -468,7 +494,7 @@ exports[`<ModalBox> should open and close on ModalToggle click: open 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> should render into a portal by custom selector 1`] = `
+exports[`<Dialog> should render into a portal by custom selector 1`] = `
 <body>
   <div
     class="portals"
@@ -496,7 +522,7 @@ exports[`<ModalBox> should render into a portal by custom selector 1`] = `
 </body>
 `;
 
-exports[`<ModalBox> should render into a portal by custom selector object 1`] = `
+exports[`<Dialog> should render into a portal by custom selector object 1`] = `
 <body>
   <div
     class="portals"
@@ -524,7 +550,7 @@ exports[`<ModalBox> should render into a portal by custom selector object 1`] = 
 </body>
 `;
 
-exports[`<ModalBox> should render into a portal by default ID 1`] = `
+exports[`<Dialog> should render into a portal by default ID 1`] = `
 <body>
   <div
     id="portals"
@@ -552,7 +578,7 @@ exports[`<ModalBox> should render into a portal by default ID 1`] = `
 </body>
 `;
 
-exports[`<ModalBox> shouldn't close on escape key if prop is false: closed initially 1`] = `
+exports[`<Dialog> shouldn't close on escape key if prop is false: closed initially 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -573,7 +599,7 @@ exports[`<ModalBox> shouldn't close on escape key if prop is false: closed initi
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> shouldn't close on escape key if prop is false: open 1`] = `
+exports[`<Dialog> shouldn't close on escape key if prop is false: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -595,7 +621,7 @@ exports[`<ModalBox> shouldn't close on escape key if prop is false: open 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalBox> shouldn't close on escape key if prop is false: still open 1`] = `
+exports[`<Dialog> shouldn't close on escape key if prop is false: still open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -617,7 +643,44 @@ exports[`<ModalBox> shouldn't close on escape key if prop is false: still open 1
 </DocumentFragment>
 `;
 
-exports[`<ModalToggle> should have openClassName and closedClassName 1`] = `
+exports[`<Modal> should have a custom id 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="modal--foobar"
+    role="dialog"
+    style="position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="modal--foobar"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Modal> should provide context to function child 1`] = `
+Object {
+  "close": [Function],
+  "dialogRef": Object {
+    "current": null,
+  },
+  "id": "modal--1",
+  "isOpen": false,
+  "open": [Function],
+  "toggle": [Function],
+  "triggerRef": Object {
+    "current": null,
+  },
+}
+`;
+
+exports[`<Trigger> should have openClassName and closedClassName 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -639,7 +702,7 @@ exports[`<ModalToggle> should have openClassName and closedClassName 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalToggle> should have openClassName and closedClassName: open 1`] = `
+exports[`<Trigger> should have openClassName and closedClassName: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -662,7 +725,7 @@ exports[`<ModalToggle> should have openClassName and closedClassName: open 1`] =
 </DocumentFragment>
 `;
 
-exports[`<ModalToggle> should have openStyle and closedStyle 1`] = `
+exports[`<Trigger> should have openStyle and closedStyle 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="true"
@@ -684,7 +747,7 @@ exports[`<ModalToggle> should have openStyle and closedStyle 1`] = `
 </DocumentFragment>
 `;
 
-exports[`<ModalToggle> should have openStyle and closedStyle: open 1`] = `
+exports[`<Trigger> should have openStyle and closedStyle: open 1`] = `
 <DocumentFragment>
   <div
     aria-hidden="false"
@@ -710,11 +773,11 @@ exports[`<ModalToggle> should have openStyle and closedStyle: open 1`] = `
 exports[`useModal() should return context 1`] = `
 Object {
   "close": [Function],
-  "id": "modal--36",
-  "isOpen": false,
-  "modalRef": Object {
+  "dialogRef": Object {
     "current": null,
   },
+  "id": "modal--38",
+  "isOpen": false,
   "open": [Function],
   "toggle": [Function],
   "triggerRef": Object {

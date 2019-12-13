@@ -17,7 +17,7 @@ export interface ModalContextValue {
   close: () => void
   toggle: () => void
   id: string
-  modalRef: React.MutableRefObject<HTMLElement | null>
+  dialogRef: React.MutableRefObject<HTMLElement | null>
   triggerRef: React.MutableRefObject<HTMLElement | null>
 }
 
@@ -32,11 +32,10 @@ export const ModalContext = React.createContext<ModalContextValue>({}),
   {Consumer: ModalConsumer} = ModalContext,
   useModal = () => useContext<ModalContextValue>(ModalContext),
   useIsOpen = () => useModal().isOpen,
-  useControls = (): ModalControls =>
-    Object.entries(useModal()).reduce((prev, [key, value]) => {
-      if (typeof value === 'function') prev[key] = value
-      return prev
-    }, {}) as ModalControls
+  useControls = (): ModalControls => {
+    const {open, close, toggle} = useModal()
+    return {open, close, toggle}
+  }
 
 const portalize = (
   Component,
@@ -59,7 +58,7 @@ const defaultStyles = {
   zIndex: 1,
 }
 
-export interface ModalBoxProps {
+export interface DialogProps {
   portal?: boolean | undefined | null | string | Record<any, any>
   closeOnEscape?: boolean
   openClassName?: string
@@ -69,9 +68,9 @@ export interface ModalBoxProps {
   children: JSX.Element | React.ReactElement
 }
 
-export const ModalBox: React.FC<ModalBoxProps> = React.forwardRef<
+export const Dialog: React.FC<DialogProps> = React.forwardRef<
   JSX.Element | React.ReactElement,
-  ModalBoxProps
+  DialogProps
 >(
   (
     {
@@ -85,12 +84,12 @@ export const ModalBox: React.FC<ModalBoxProps> = React.forwardRef<
     },
     userRef: any
   ) => {
-    const {id, isOpen, close, modalRef} = useModal()
-    const ref = useMergedRef(modalRef, userRef)
+    const {id, isOpen, close, dialogRef} = useModal()
+    const ref = useMergedRef(dialogRef, userRef)
 
     // handles closing the modal when the ESC key is pressed
     useLayoutEffect(() => {
-      const current = modalRef?.current
+      const current = dialogRef?.current
       if (current && isOpen) {
         // Focuses on the first focusable element
         raf(() => {
@@ -106,7 +105,7 @@ export const ModalBox: React.FC<ModalBoxProps> = React.forwardRef<
       }
 
       return
-    }, [modalRef.current, isOpen, close, closeOnEscape])
+    }, [dialogRef.current, isOpen, close, closeOnEscape])
 
     return portalize(
       React.cloneElement(children, {
@@ -132,7 +131,34 @@ export const ModalBox: React.FC<ModalBoxProps> = React.forwardRef<
   }
 )
 
-export interface ModalToggleProps {
+export interface CloseProps {
+  children: JSX.Element | React.ReactElement
+}
+
+export const Close: React.FC<CloseProps> = React.forwardRef<
+  JSX.Element | React.ReactElement,
+  CloseProps
+  >(({children}, ref) => {
+  const {close, isOpen, id} = useModal()
+  const onClick = useCallback(
+    e => {
+      close()
+      children.props.onClick?.(e)
+    },
+    [close, children.props.onClick]
+  )
+
+  return React.cloneElement(children, {
+    'aria-controls': id,
+    'aria-haspopup': 'dialog',
+    'aria-expanded': String(isOpen),
+    'aria-label': children.props['aria-label'] || 'Close',
+    onClick,
+    ref,
+  })
+})
+
+export interface TriggerProps {
   openClassName?: string
   closedClassName?: string
   openStyle?: React.CSSProperties
@@ -140,9 +166,9 @@ export interface ModalToggleProps {
   children: JSX.Element | React.ReactElement
 }
 
-export const ModalToggle: React.FC<ModalToggleProps> = React.forwardRef<
+export const Trigger: React.FC<TriggerProps> = React.forwardRef<
   JSX.Element | React.ReactElement,
-  ModalToggleProps
+  TriggerProps
 >(
   (
     {openClassName, closedClassName, openStyle, closedStyle, children},
@@ -150,6 +176,7 @@ export const ModalToggle: React.FC<ModalToggleProps> = React.forwardRef<
   ) => {
     const {isOpen, id, toggle, triggerRef} = useModal()
     const ref = useMergedRef(triggerRef, userRef)
+    const seen = useRef<boolean>(false)
     const onClick = useCallback(
       e => {
         toggle()
@@ -157,6 +184,15 @@ export const ModalToggle: React.FC<ModalToggleProps> = React.forwardRef<
       },
       [toggle, children.props.onClick]
     )
+
+    // returns the focus to the opener when the modal box closes if focus is
+    // not an event that triggers opening the modal
+    useLayoutEffect(() => {
+      if (!isOpen) {
+        if (seen.current) raf(() => triggerRef.current?.focus())
+        seen.current = true
+      }
+    }, [isOpen])
 
     return React.cloneElement(children, {
       'aria-controls': id,
@@ -201,7 +237,7 @@ export const Modal: React.FC<ModalProps> = ({
   isOpen = open === void 0 || open === null ? isOpen : open
   id = `modal--${useId(id)}`
   const triggerRef = useRef<HTMLElement | null>(null)
-  const modalRef = useRef<HTMLElement | null>(null)
+  const dialogRef = useRef<HTMLElement | null>(null)
   const context = useMemo(
     () => ({
       id,
@@ -210,7 +246,7 @@ export const Modal: React.FC<ModalProps> = ({
       toggle,
       isOpen,
       triggerRef,
-      modalRef,
+      dialogRef,
     }),
     [id, isOpen, toggle.on, toggle.off, toggle]
   )
@@ -227,6 +263,6 @@ export const Modal: React.FC<ModalProps> = ({
 /* istanbul ignore next */
 if (__DEV__) {
   Modal.displayName = 'Modal'
-  ModalBox.displayName = 'ModalBox'
-  ModalToggle.displayName = 'ModalToggle'
+  Dialog.displayName = 'Dialog'
+  Trigger.displayName = 'Trigger'
 }
