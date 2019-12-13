@@ -135,12 +135,8 @@ export interface CloseProps {
   children: JSX.Element | React.ReactElement
 }
 
-export const Close: React.FC<CloseProps> = React.forwardRef<
-  JSX.Element | React.ReactElement,
-  CloseProps
->(({children}, ref) => {
+export const Close: React.FC<CloseProps> = ({children}) => {
   const {close, isOpen, id} = useModal()
-  ref = useMergedRef(children.props.ref, ref)
   const onClick = useCallback(
     e => {
       close()
@@ -154,10 +150,9 @@ export const Close: React.FC<CloseProps> = React.forwardRef<
     'aria-haspopup': 'dialog',
     'aria-expanded': String(isOpen),
     'aria-label': children.props['aria-label'] || 'Close',
-    onClick,
-    ref,
+    onClick
   })
-})
+}
 
 export interface TriggerProps {
   openClassName?: string
