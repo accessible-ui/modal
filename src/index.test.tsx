@@ -142,10 +142,10 @@ describe('<Dialog>', () => {
     expect(result.asFragment()).toMatchSnapshot('open')
   })
 
-  it(`should apply user defined openClassName and closedClassName`, () => {
+  it(`should apply user defined openClass and closedClass`, () => {
     const result = render(
       <Modal>
-        <Dialog closedClassName="closed" openClassName="open">
+        <Dialog closedClass="closed" openClass="open">
           <div>Hello world</div>
         </Dialog>
 
@@ -298,14 +298,14 @@ describe('<Dialog>', () => {
 })
 
 describe('<Trigger>', () => {
-  it('should have openClassName and closedClassName', () => {
+  it('should have openClass and closedClass', () => {
     const result = render(
       <Modal>
         <Dialog>
           <div>Hello world</div>
         </Dialog>
 
-        <Trigger closedClassName="closed" openClassName="open">
+        <Trigger closedClass="closed" openClass="open">
           <button>open me</button>
         </Trigger>
       </Modal>
@@ -348,7 +348,7 @@ describe('<Close>', () => {
           </div>
         </Dialog>
 
-        <Trigger closedClassName="closed" openClassName="open">
+        <Trigger closedClass="closed" openClass="open">
           <button>open me</button>
         </Trigger>
       </Modal>

@@ -61,8 +61,8 @@ const defaultStyles = {
 export interface DialogProps {
   portal?: boolean | undefined | null | string | Record<any, any>
   closeOnEscape?: boolean
-  openClassName?: string
-  closedClassName?: string
+  openClass?: string
+  closedClass?: string
   openStyle?: React.CSSProperties
   closedStyle?: React.CSSProperties
   children: JSX.Element | React.ReactElement
@@ -76,8 +76,8 @@ export const Dialog: React.FC<DialogProps> = React.forwardRef<
     {
       closeOnEscape = true,
       portal,
-      openClassName = 'modal--open',
-      closedClassName,
+      openClass = 'modal--open',
+      closedClass,
       openStyle,
       closedStyle,
       children,
@@ -116,7 +116,7 @@ export const Dialog: React.FC<DialogProps> = React.forwardRef<
         className:
           clsx(
             children.props.className,
-            isOpen ? openClassName : closedClassName
+            isOpen ? openClass : closedClass
           ) || void 0,
         style: Object.assign(
           {},
@@ -155,8 +155,8 @@ export const Close: React.FC<CloseProps> = ({children}) => {
 }
 
 export interface TriggerProps {
-  openClassName?: string
-  closedClassName?: string
+  openClass?: string
+  closedClass?: string
   openStyle?: React.CSSProperties
   closedStyle?: React.CSSProperties
   children: JSX.Element | React.ReactElement
@@ -167,7 +167,7 @@ export const Trigger: React.FC<TriggerProps> = React.forwardRef<
   TriggerProps
 >(
   (
-    {openClassName, closedClassName, openStyle, closedStyle, children},
+    {openClass, closedClass, openStyle, closedStyle, children},
     userRef: any
   ) => {
     const {isOpen, id, toggle, triggerRef} = useModal()
@@ -197,7 +197,7 @@ export const Trigger: React.FC<TriggerProps> = React.forwardRef<
       className:
         clsx(
           children.props.className,
-          isOpen ? openClassName : closedClassName
+          isOpen ? openClass : closedClass
         ) || void 0,
       style: Object.assign(
         {},
