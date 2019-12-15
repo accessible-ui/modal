@@ -114,12 +114,10 @@ export const Dialog: React.FC<DialogProps> = React.forwardRef<
         'aria-modal': 'false',
         'aria-hidden': String(!isOpen),
         className:
-          clsx(
-            children.props.className,
-            isOpen ? openClass : closedClass
-          ) || void 0,
+          clsx(children.props.className, isOpen ? openClass : closedClass) ||
+          void 0,
         style: Object.assign(
-          {},
+          {visibility: isOpen ? 'visible' : 'hidden'},
           defaultStyles,
           children.props.style,
           isOpen ? openStyle : closedStyle
@@ -195,10 +193,8 @@ export const Trigger: React.FC<TriggerProps> = React.forwardRef<
       'aria-haspopup': 'dialog',
       'aria-expanded': String(isOpen),
       className:
-        clsx(
-          children.props.className,
-          isOpen ? openClass : closedClass
-        ) || void 0,
+        clsx(children.props.className, isOpen ? openClass : closedClass) ||
+        void 0,
       style: Object.assign(
         {},
         children.props.style,
@@ -215,11 +211,11 @@ export interface ModalProps {
   defaultOpen?: boolean
   id?: string
   children:
-    | React.ReactChild
-    | React.ReactChild[]
+    | React.ReactNode
+    | React.ReactNode[]
     | JSX.Element[]
     | JSX.Element
-    | ((context: ModalContextValue) => React.ReactChild)
+    | ((context: ModalContextValue) => React.ReactNode)
 }
 
 export const Modal: React.FC<ModalProps> = ({

@@ -8,11 +8,7 @@
   ],
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["esnext", "dom", "dom.iterable"],
     "jsx": "react",
     "moduleResolution": "node",
     "strictNullChecks": true,

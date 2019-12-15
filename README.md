@@ -29,7 +29,16 @@
 <pre align="center">npm i @accessible/modal</pre>
 <hr>
 
-An accessible modal component for React
+An accessible and versatile modal component for React
+
+## Features
+
+- **Style-agnostic** You can use this component with the styling library of your choice. It
+  works with CSS-in-JS, SASS, plain CSS, plain `style` objects, anything!
+- **Portal-friendly** The modal dialog will render into React portals of your choice when configured
+  to do so.
+- **a11y/aria-compliant** This component works with screen readers out of the box and manages
+  focus for you.
 
 ## Quick Start
 
@@ -55,29 +64,101 @@ const Component = () => (
 
 ## API
 
+### Components
+
+| Component               | Description                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| [`<Modal>`](#modal)     | This component creates the context for your modal box and trigger and contains some configuration options.   |
+| [`<Dialog>`](#dialog)   | This component wraps any React element and turns it into a modal box.                                        |
+| [`<Trigger>`](#trigger) | This component wraps any React element and turns it into a modal trigger.                                    |
+| [`<Close>`](#close)     | This is a convenience component that wraps any React element and adds an onClick handler to close the modal. |  |
+
+### Hooks
+
+| Hook                            | Description                                                                                 |
+| ------------------------------- | ------------------------------------------------------------------------------------------- |
+| [`useModal()`](#usemodal)       | This hook provides the value of the modal's [ModalContextValue object](#modalcontextvalue). |
+| [`useControls()`](#usecontrols) | This hook provides access to the modal's `open`, `close`, and `toggle` functions.           |
+| [`useIsOpen()`](#useisopen)     | This hook provides access to the modal's `isOpen` value.                                    |
+
 ### `<Modal>`
+
+This component creates the context for your modal box and trigger and contains some
+configuration options.
 
 #### Props
 
-| Prop | Type | Default | Required? | Description |
-| ---- | ---- | ------- | --------- | ----------- |
-|      |      |         |           |             |
+| Prop        | Type                                                                                                                              | Default     | Required? | Description                                                                                                                                                                       |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaultOpen | `boolean`                                                                                                                         | `false`     | No        | This sets the default open state of the modal. By default the modal is closed.                                                                                                    |
+| open        | `boolean`                                                                                                                         | `undefined` | No        | You can control the open/closed state of the modal with this prop. When it isn't undefined, this value will take precedence over any calls to `open()`, `close()`, or `toggle()`. |
+| id          | `string`                                                                                                                          | `undefined` | No        | By default this component creates a unique id for you, as it is required for certain aria attributes. Supplying an id here overrides the auto id feature.                         |
+| children    | <code>React.ReactNode &#124; React.ReactNode[] &#124; JSX.Element &#124; ((context: ModalContextValue) => React.ReactNode)</code> | `undefined` | No        | Your modal contents and any other children.                                                                                                                                       |
 
 ### `<Dialog>`
 
+This component wraps any React element and turns it into a modal dialog.
+
 #### Props
 
-| Prop | Type | Default | Required? | Description |
-| ---- | ---- | ------- | --------- | ----------- |
-|      |      |         |           |             |
+| Prop          | Type                                | Default         | Required? | Description                                                                                                                                                                                                    |
+| ------------- | ----------------------------------- | --------------- | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| portal        | <code>boolean &#124; string </code> | `false`         | No        | When `true` this will render the modal into a React portal with the id `#portals`. You can render it into any portal by providing its query selector here, e.g. `#foobar`, `[data-portal=true]`, or `.foobar`. |
+| closeOnEscape | `boolean`                           | `true`          | No        | By default the modal will close when the `Escape` key is pressed. You can turn this off by providing `false` here.                                                                                             |
+| closedClass   | `string`                            | `undefined`     | No        | This class name will be applied to the child element when the modal is `closed`.                                                                                                                               |
+| openClass     | `string`                            | `"modal--open"` | No        | This class name will be applied to the child element when the modal is `open`.                                                                                                                                 |
+| closedStyle   | `React.CSSProperties`               | `undefined`     | No        | These styles will be applied to the child element when the modal is `closed` in addition to the default styles that set the box's visibility.                                                                  |
+| openStyle     | `React.CSSProperties`               | `undefined`     | No        | These styles name will be applied to the child element when the modal is `open` in addition to the default styles that set the box's visibility.                                                               |
+| children      | `React.ReactElement`                | `undefined`     | Yes       | The child is cloned by this component and has aria attributes injected into its props as well as the events defined above.                                                                                     |
+
+#### Example
+
+```jsx harmony
+<Dialog>
+  <div className="alert">Alert</div>
+</Dialog>
+
+// <div
+//   class="alert"
+//   aria-hidden="true"
+//   aria-modal="false"
+//   id="modal--12"
+//   role="dialog"
+//   style="visibility: hidden; position: fixed; margin: auto; left: 0px; right: 0px; top: 50%; transform: translateY(-50%); z-index: 1;"
+// >
+//   Alert
+// </div>
+```
 
 ### `<Trigger>`
 
+This component wraps any React element and adds an `onClick` handler which toggles the open state
+of the modal dialog.
+
 #### Props
 
-| Prop | Type | Default | Required? | Description |
-| ---- | ---- | ------- | --------- | ----------- |
-|      |      |         |           |             |
+| Prop        | Type                  | Default     | Required? | Description                                                                                                                |
+| ----------- | --------------------- | ----------- | --------- | -------------------------------------------------------------------------------------------------------------------------- |
+| closedClass | `string`              | `undefined` | No        | This class name will be applied to the child element when the modal is `closed`.                                           |
+| openClass   | `string`              | `undefined` | No        | This class name will be applied to the child element when the modal is `open`.                                             |
+| closedStyle | `React.CSSProperties` | `undefined` | No        | These styles will be applied to the child element when the modal is `closed`.                                              |
+| openStyle   | `React.CSSProperties` | `undefined` | No        | These styles name will be applied to the child element when the modal is `open`.                                           |
+| children    | `React.ReactElement`  | `undefined` | Yes       | The child is cloned by this component and has aria attributes injected into its props as well as the events defined above. |
+
+```jsx harmony
+<Trigger on="click">
+  <button className="my-button">Open me!</button>
+</Trigger>
+
+// <button
+//   class="my-button"
+//   aria-controls="modal--12"
+//   aria-haspopup="dialog"
+//   aria-expanded="false"
+// >
+//   Open me!
+// </button>
+```
 
 ### `<Close>`
 
@@ -96,7 +177,7 @@ This is a convenience component that wraps any React element and adds an onClick
 
 // <button
 //   class="my-button"
-//   aria-controls="popover--12"
+//   aria-controls="modal--12"
 //   aria-haspopup="dialog"
 //   aria-expanded="false"
 // >
@@ -106,9 +187,66 @@ This is a convenience component that wraps any React element and adds an onClick
 
 ### `useModal()`
 
+This hook provides the value of the modal's [ModalContextValue object](#modalcontextvalue)
+
+#### Example
+
+```jsx harmony
+const Component = () => {
+  const {open, close, toggle, isOpen} = useModal()
+  return <button onClick={toggle}>Toggle the modal</button>
+}
+```
+
+### `ModalContextValue`
+
+```typescript
+interface ModalContextValue {
+  isOpen: boolean
+  open: () => void
+  close: () => void
+  toggle: () => void
+  id: string
+  dialogRef: React.MutableRefObject<HTMLElement | null>
+  triggerRef: React.MutableRefObject<HTMLElement | null>
+}
+```
+
 ### `useControls()`
 
+This hook provides access to the modal's `open`, `close`, and `toggle` functions
+
+#### Example
+
+```jsx harmony
+const Component = () => {
+  const {open, close, toggle} = useControls()
+  return (
+    <Dialog>
+      <div className="my-modal">
+        <button onClick={close}>Close me</button>
+      </div>
+    </Dialog>
+  )
+}
+```
+
 ### `useIsOpen()`
+
+This hook provides access to the modal's `isOpen` value
+
+#### Example
+
+```jsx harmony
+const Component = () => {
+  const isOpen = useIsOpen()
+  return (
+    <Dialog>
+      <div className="my-modal">Am I open? {isOpen ? 'Yes' : 'No'}</div>
+    </Dialog>
+  )
+}
+```
 
 ## LICENSE
 

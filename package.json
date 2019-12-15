@@ -6,7 +6,7 @@
   "bugs": "https://github.com/accessible-ui/modal/issues",
   "author": "Jared Lunde <jared.lunde@gmail.com> (https://jaredLunde.com)",
   "license": "MIT",
-  "description": "",
+  "description": "An accessible and versatile modal component for React",
   "keywords": [
     "react",
     "react component",
