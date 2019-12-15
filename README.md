@@ -42,6 +42,8 @@ An accessible and versatile modal component for React
 
 ## Quick Start
 
+[Check out the example on CodeSandbox](https://codesandbox.io/s/accessiblemodal-example-v4koo)
+
 ```jsx harmony
 import {Modal, Dialog, Trigger, Close} from '@accessible/modal'
 
