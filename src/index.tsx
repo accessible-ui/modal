@@ -92,15 +92,23 @@ export const Dialog: React.FC<DialogProps> = React.forwardRef<
       const current = dialogRef?.current
       if (current && isOpen) {
         // Focuses on the first focusable element
-        raf(() => {
+        const doFocus = () => {
           const tabbableEls = tabbable(current)
           if (tabbableEls.length > 0) tabbableEls[0].focus()
-        })
+        }
+
+        raf(doFocus)
+        current.addEventListener('transitionend', doFocus)
         // Closes the modal when escape is pressed
         if (closeOnEscape) {
           const callback = event => parseInt(event.code) === 27 && close()
           current.addEventListener('keyup', callback)
-          return () => current.removeEventListener('keyup', callback)
+          return () => {
+            current.removeEventListener('keyup', callback)
+            current.removeEventListener('transitionend', doFocus)
+          }
+        } else {
+          return () => current.removeEventListener('transitionend', doFocus)
         }
       }
 
