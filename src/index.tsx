@@ -57,10 +57,9 @@ const portalize = (
 const defaultStyles = {
   position: 'fixed',
   margin: 'auto',
-  left: 0,
-  right: 0,
+  left: '50%',
   top: '50%',
-  transform: 'translateY(-50%)',
+  transform: 'translate3d(-50%, -50%, 0)',
   zIndex: 1,
 }
 
