@@ -1,10 +1,16 @@
-import React, {useRef, useMemo, useContext, useCallback} from 'react'
+import React, {
+  cloneElement,
+  useRef,
+  useMemo,
+  useContext,
+  useCallback,
+} from 'react'
 import useSwitch from '@react-hook/switch'
 import useMergedRef from '@react-hook/merged-ref'
 import useLayoutEffect from '@react-hook/passive-layout-effect'
 import {useId} from '@reach/auto-id'
 import Portalize from 'react-portalize'
-import tabbable from 'tabbable'
+import tabbable from '@accessible/tabbable'
 import clsx from 'clsx'
 import raf from 'raf'
 
@@ -116,7 +122,7 @@ export const Dialog: React.FC<DialogProps> = React.forwardRef<
     }, [dialogRef.current, isOpen, close, closeOnEscape])
 
     return portalize(
-      React.cloneElement(children, {
+      cloneElement(children, {
         id,
         role: 'dialog',
         'aria-modal': 'false',
@@ -151,7 +157,7 @@ export const Close: React.FC<CloseProps> = ({children}) => {
     [close, children.props.onClick]
   )
 
-  return React.cloneElement(children, {
+  return cloneElement(children, {
     'aria-controls': id,
     'aria-haspopup': 'dialog',
     'aria-expanded': String(isOpen),
@@ -196,7 +202,7 @@ export const Trigger: React.FC<TriggerProps> = React.forwardRef<
       }
     }, [isOpen])
 
-    return React.cloneElement(children, {
+    return cloneElement(children, {
       'aria-controls': id,
       'aria-haspopup': 'dialog',
       'aria-expanded': String(isOpen),

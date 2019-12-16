@@ -1,6 +1,6 @@
 {
   "name": "@accessible/modal",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/accessible-ui/modal#readme",
   "repository": "github:accessible-ui/modal",
   "bugs": "https://github.com/accessible-ui/modal/issues",
@@ -82,14 +82,14 @@
     "typescript": "latest"
   },
   "dependencies": {
+    "@accessible/tabbable": "^1.0.4",
     "@reach/auto-id": "^0.6.1",
     "@react-hook/merged-ref": "^1.0.7",
     "@react-hook/passive-layout-effect": "^1.0.2",
     "@react-hook/switch": "^1.0.4",
     "clsx": "^1.0.4",
     "raf": "^3.4.1",
-    "react-portalize": "^2.0.2",
-    "tabbable": "^4.0.0"
+    "react-portalize": "^2.0.2"
   },
   "peerDependencies": {
     "prop-types": ">=15.7.2",
