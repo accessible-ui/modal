@@ -70,77 +70,69 @@ export interface DialogProps {
   closedClass?: string
   openStyle?: React.CSSProperties
   closedStyle?: React.CSSProperties
-  children: JSX.Element | React.ReactElement
+  children: React.ReactElement
 }
 
-export const Dialog: React.FC<DialogProps> = React.forwardRef<
-  JSX.Element | React.ReactElement,
-  DialogProps
->(
-  (
-    {
-      closeOnEscape = true,
-      portal,
-      openClass = 'modal--open',
-      closedClass,
-      openStyle,
-      closedStyle,
-      children,
-    },
-    userRef: any
-  ) => {
-    const {id, isOpen, close, dialogRef} = useModal()
-    const ref = useMergedRef(dialogRef, userRef)
-
-    // handles closing the modal when the ESC key is pressed
-    useLayoutEffect(() => {
-      const current = dialogRef?.current
-      if (current && isOpen) {
-        // Focuses on the first focusable element
-        const doFocus = () => {
-          const tabbableEls = tabbable(current)
-          if (tabbableEls.length > 0) tabbableEls[0].focus()
-        }
-
-        raf(doFocus)
-        current.addEventListener('transitionend', doFocus)
-        // Closes the modal when escape is pressed
-        if (closeOnEscape) {
-          const callback = event => parseInt(event.code) === 27 && close()
-          current.addEventListener('keyup', callback)
-          return () => {
-            current.removeEventListener('keyup', callback)
-            current.removeEventListener('transitionend', doFocus)
-          }
-        } else {
-          return () => current.removeEventListener('transitionend', doFocus)
-        }
+export const Dialog: React.FC<DialogProps> = ({
+  closeOnEscape = true,
+  portal,
+  openClass = 'modal--open',
+  closedClass,
+  openStyle,
+  closedStyle,
+  children,
+}) => {
+  const {id, isOpen, close, dialogRef} = useModal()
+  // @ts-ignore
+  const ref = useMergedRef(children.ref, dialogRef)
+  // handles closing the modal when the ESC key is pressed
+  useLayoutEffect(() => {
+    const current = dialogRef?.current
+    if (current && isOpen) {
+      // Focuses on the first focusable element
+      const doFocus = () => {
+        const tabbableEls = tabbable(current)
+        if (tabbableEls.length > 0) tabbableEls[0].focus()
       }
 
-      return
-    }, [dialogRef.current, isOpen, close, closeOnEscape])
+      raf(doFocus)
+      current.addEventListener('transitionend', doFocus)
+      // Closes the modal when escape is pressed
+      if (closeOnEscape) {
+        const callback = event => parseInt(event.code) === 27 && close()
+        current.addEventListener('keyup', callback)
+        return () => {
+          current.removeEventListener('keyup', callback)
+          current.removeEventListener('transitionend', doFocus)
+        }
+      } else {
+        return () => current.removeEventListener('transitionend', doFocus)
+      }
+    }
 
-    return portalize(
-      cloneElement(children, {
-        id,
-        role: 'dialog',
-        'aria-modal': 'false',
-        'aria-hidden': String(!isOpen),
-        className:
-          clsx(children.props.className, isOpen ? openClass : closedClass) ||
-          void 0,
-        style: Object.assign(
-          {visibility: isOpen ? 'visible' : 'hidden'},
-          defaultStyles,
-          children.props.style,
-          isOpen ? openStyle : closedStyle
-        ),
-        ref,
-      }),
-      portal
-    )
-  }
-)
+    return
+  }, [dialogRef.current, isOpen, close, closeOnEscape])
+
+  return portalize(
+    cloneElement(children, {
+      id,
+      role: 'dialog',
+      'aria-modal': 'false',
+      'aria-hidden': String(!isOpen),
+      className:
+        clsx(children.props.className, isOpen ? openClass : closedClass) ||
+        void 0,
+      style: Object.assign(
+        {visibility: isOpen ? 'visible' : 'hidden'},
+        defaultStyles,
+        children.props.style,
+        isOpen ? openStyle : closedStyle
+      ),
+      ref,
+    }),
+    portal
+  )
+}
 
 export interface CloseProps {
   children: JSX.Element | React.ReactElement
@@ -173,51 +165,50 @@ export interface TriggerProps {
   children: JSX.Element | React.ReactElement
 }
 
-export const Trigger: React.FC<TriggerProps> = React.forwardRef<
-  JSX.Element | React.ReactElement,
-  TriggerProps
->(
-  (
-    {openClass, closedClass, openStyle, closedStyle, children},
-    userRef: any
-  ) => {
-    const {isOpen, id, toggle, triggerRef} = useModal()
-    const ref = useMergedRef(triggerRef, userRef)
-    const seen = useRef<boolean>(false)
-    const onClick = useCallback(
-      e => {
-        toggle()
-        children.props.onClick?.(e)
-      },
-      [toggle, children.props.onClick]
-    )
+export const Trigger: React.FC<TriggerProps> = ({
+  openClass,
+  closedClass,
+  openStyle,
+  closedStyle,
+  children,
+}) => {
+  const {isOpen, id, toggle, triggerRef} = useModal()
+  // @ts-ignore
+  const ref = useMergedRef(children.ref, triggerRef)
+  const seen = useRef<boolean>(false)
+  const onClick = useCallback(
+    e => {
+      toggle()
+      children.props.onClick?.(e)
+    },
+    [toggle, children.props.onClick]
+  )
 
-    // returns the focus to the opener when the modal box closes if focus is
-    // not an event that triggers opening the modal
-    useLayoutEffect(() => {
-      if (!isOpen) {
-        if (seen.current) raf(() => triggerRef.current?.focus())
-        seen.current = true
-      }
-    }, [isOpen])
+  // returns the focus to the opener when the modal box closes if focus is
+  // not an event that triggers opening the modal
+  useLayoutEffect(() => {
+    if (!isOpen) {
+      if (seen.current) raf(() => triggerRef.current?.focus())
+      seen.current = true
+    }
+  }, [isOpen])
 
-    return cloneElement(children, {
-      'aria-controls': id,
-      'aria-haspopup': 'dialog',
-      'aria-expanded': String(isOpen),
-      className:
-        clsx(children.props.className, isOpen ? openClass : closedClass) ||
-        void 0,
-      style: Object.assign(
-        {},
-        children.props.style,
-        isOpen ? openStyle : closedStyle
-      ),
-      onClick,
-      ref,
-    })
-  }
-)
+  return cloneElement(children, {
+    'aria-controls': id,
+    'aria-haspopup': 'dialog',
+    'aria-expanded': String(isOpen),
+    className:
+      clsx(children.props.className, isOpen ? openClass : closedClass) ||
+      void 0,
+    style: Object.assign(
+      {},
+      children.props.style,
+      isOpen ? openStyle : closedStyle
+    ),
+    onClick,
+    ref,
+  })
+}
 
 export interface ModalProps {
   open?: boolean
