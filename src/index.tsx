@@ -5,14 +5,14 @@ import React, {
   useContext,
   useCallback,
 } from 'react'
+import useKeycode from '@accessible/use-keycode'
+import useConditionalFocus from '@accessible/use-conditional-focus'
 import useSwitch from '@react-hook/switch'
 import useMergedRef from '@react-hook/merged-ref'
 import useLayoutEffect from '@react-hook/passive-layout-effect'
 import {useId} from '@reach/auto-id'
 import Portalize from 'react-portalize'
-import tabbable from '@accessible/tabbable'
 import clsx from 'clsx'
-import raf from 'raf'
 
 const __DEV__ =
   typeof process !== 'undefined' && process.env.NODE_ENV !== 'production'
@@ -23,8 +23,6 @@ export interface ModalContextValue {
   close: () => void
   toggle: () => void
   id: string
-  dialogRef: React.MutableRefObject<HTMLElement | null>
-  triggerRef: React.MutableRefObject<HTMLElement | null>
 }
 
 export interface ModalControls {
@@ -82,36 +80,12 @@ export const Dialog: React.FC<DialogProps> = ({
   closedStyle,
   children,
 }) => {
-  const {id, isOpen, close, dialogRef} = useModal()
-  // @ts-ignore
-  const ref = useMergedRef(children.ref, dialogRef)
+  const {id, isOpen, close} = useModal()
   // handles closing the modal when the ESC key is pressed
-  useLayoutEffect(() => {
-    const current = dialogRef?.current
-    if (current && isOpen) {
-      // Focuses on the first focusable element
-      const doFocus = () => {
-        const tabbableEls = tabbable(current)
-        if (tabbableEls.length > 0) tabbableEls[0].focus()
-      }
-
-      raf(doFocus)
-      current.addEventListener('transitionend', doFocus)
-      // Closes the modal when escape is pressed
-      if (closeOnEscape) {
-        const callback = event => parseInt(event.code) === 27 && close()
-        current.addEventListener('keyup', callback)
-        return () => {
-          current.removeEventListener('keyup', callback)
-          current.removeEventListener('transitionend', doFocus)
-        }
-      } else {
-        return () => current.removeEventListener('transitionend', doFocus)
-      }
-    }
-
-    return
-  }, [dialogRef.current, isOpen, close, closeOnEscape])
+  const keycodeRef = useKeycode(27, () => closeOnEscape && close())
+  const focusRef = useConditionalFocus(isOpen)
+  // @ts-ignore
+  const ref = useMergedRef(children.ref, focusRef, keycodeRef)
 
   return portalize(
     cloneElement(children, {
@@ -172,10 +146,11 @@ export const Trigger: React.FC<TriggerProps> = ({
   closedStyle,
   children,
 }) => {
-  const {isOpen, id, toggle, triggerRef} = useModal()
-  // @ts-ignore
-  const ref = useMergedRef(children.ref, triggerRef)
+  const {isOpen, id, toggle} = useModal()
   const seen = useRef<boolean>(false)
+  const focusRef = useConditionalFocus(seen.current && !isOpen, true)
+  // @ts-ignore
+  const ref = useMergedRef(children.ref, focusRef)
   const onClick = useCallback(
     e => {
       toggle()
@@ -184,13 +159,8 @@ export const Trigger: React.FC<TriggerProps> = ({
     [toggle, children.props.onClick]
   )
 
-  // returns the focus to the opener when the modal box closes if focus is
-  // not an event that triggers opening the modal
   useLayoutEffect(() => {
-    if (!isOpen) {
-      if (seen.current) raf(() => triggerRef.current?.focus())
-      seen.current = true
-    }
+    if (!isOpen) seen.current = true
   }, [isOpen])
 
   return cloneElement(children, {
@@ -232,8 +202,6 @@ export const Modal: React.FC<ModalProps> = ({
   let [isOpen, toggle] = useSwitch(defaultOpen)
   isOpen = open === void 0 || open === null ? isOpen : open
   id = `modal--${useId(id)}`
-  const triggerRef = useRef<HTMLElement | null>(null)
-  const dialogRef = useRef<HTMLElement | null>(null)
   const context = useMemo(
     () => ({
       id,
@@ -241,8 +209,6 @@ export const Modal: React.FC<ModalProps> = ({
       close: toggle.off,
       toggle,
       isOpen,
-      triggerRef,
-      dialogRef,
     }),
     [id, isOpen, toggle.on, toggle.off, toggle]
   )

@@ -209,8 +209,6 @@ interface ModalContextValue {
   close: () => void
   toggle: () => void
   id: string
-  dialogRef: React.MutableRefObject<HTMLElement | null>
-  triggerRef: React.MutableRefObject<HTMLElement | null>
 }
 ```
 

@@ -667,16 +667,10 @@ exports[`<Modal> should have a custom id 1`] = `
 exports[`<Modal> should provide context to function child 1`] = `
 Object {
   "close": [Function],
-  "dialogRef": Object {
-    "current": null,
-  },
   "id": "modal--1",
   "isOpen": false,
   "open": [Function],
   "toggle": [Function],
-  "triggerRef": Object {
-    "current": null,
-  },
 }
 `;
 
@@ -773,15 +767,9 @@ exports[`<Trigger> should have openStyle and closedStyle: open 1`] = `
 exports[`useModal() should return context 1`] = `
 Object {
   "close": [Function],
-  "dialogRef": Object {
-    "current": null,
-  },
   "id": "modal--38",
   "isOpen": false,
   "open": [Function],
   "toggle": [Function],
-  "triggerRef": Object {
-    "current": null,
-  },
 }
 `;
