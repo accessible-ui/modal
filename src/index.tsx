@@ -35,7 +35,6 @@ const defaultStyles = {
   left: '50%',
   top: '50%',
   transform: 'translate3d(-50%, -50%, 0)',
-  zIndex: 1,
 }
 
 export const Target: FC<TargetProps> = props => {
