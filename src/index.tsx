@@ -27,9 +27,7 @@ export interface ModalProps extends CollapseProps {}
 export interface ModalControls extends CollapseControls {}
 export interface TriggerProps extends CollapseTriggerProps {}
 export interface CloseProps extends CollapseCloseProps {}
-export interface TargetProps extends CollapseTargetProps {
-  placement?: 'top' | 'right' | 'bottom' | 'left'
-}
+export interface TargetProps extends CollapseTargetProps {}
 
 const defaultStyles = {
   position: 'fixed',
