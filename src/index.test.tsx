@@ -5,7 +5,7 @@ import {render, fireEvent} from '@testing-library/react'
 import {
   Modal,
   Trigger,
-  Dialog,
+  Target,
   Close,
   useControls,
   useIsOpen,
@@ -16,9 +16,9 @@ describe('<Modal>', () => {
   it('should have a custom id', () => {
     const result = render(
       <Modal id="foobar">
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -45,13 +45,13 @@ describe('<Modal>', () => {
   })
 })
 
-describe('<Dialog>', () => {
+describe('<Target>', () => {
   it('should open and close on Trigger click', () => {
     const result = render(
       <Modal>
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -69,9 +69,9 @@ describe('<Dialog>', () => {
   it('should close on escape key', () => {
     const result = render(
       <Modal>
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -89,9 +89,9 @@ describe('<Dialog>', () => {
   it(`shouldn't close on escape key if prop is false`, () => {
     const result = render(
       <Modal>
-        <Dialog closeOnEscape={false}>
+        <Target closeOnEscape={false}>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -109,9 +109,9 @@ describe('<Dialog>', () => {
   it(`should assign to custom styles when opened or closed`, () => {
     const result = render(
       <Modal>
-        <Dialog>
+        <Target>
           <div style={{fontSize: '2rem'}}>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -127,9 +127,9 @@ describe('<Dialog>', () => {
   it(`should apply custom classname when opened or closed`, () => {
     const result = render(
       <Modal>
-        <Dialog>
+        <Target>
           <div className="custom">Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -145,9 +145,9 @@ describe('<Dialog>', () => {
   it(`should apply user defined openClass and closedClass`, () => {
     const result = render(
       <Modal>
-        <Dialog closedClass="closed" openClass="open">
+        <Target closedClass="closed" openClass="open">
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -163,9 +163,9 @@ describe('<Dialog>', () => {
   it(`should apply user defined openStyle and closedStyle`, () => {
     const result = render(
       <Modal>
-        <Dialog closedStyle={{display: 'none'}} openStyle={{display: 'block'}}>
+        <Target closedStyle={{display: 'none'}} openStyle={{display: 'block'}}>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -181,9 +181,9 @@ describe('<Dialog>', () => {
   it(`should be initially open when defined as such`, () => {
     const result = render(
       <Modal defaultOpen>
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -199,9 +199,9 @@ describe('<Dialog>', () => {
   it(`should act like a controlled component when 'open' prop is specified`, () => {
     const result = render(
       <Modal open>
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -215,9 +215,9 @@ describe('<Dialog>', () => {
 
     result.rerender(
       <Modal open={false}>
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -237,9 +237,9 @@ describe('<Dialog>', () => {
 
     const result = render(
       <Modal open>
-        <Dialog portal>
+        <Target portal>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -259,9 +259,9 @@ describe('<Dialog>', () => {
 
     const result = render(
       <Modal open>
-        <Dialog portal={{container: '.portals'}}>
+        <Target portal={{container: '.portals'}}>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -281,9 +281,9 @@ describe('<Dialog>', () => {
 
     const result = render(
       <Modal open>
-        <Dialog portal=".portals">
+        <Target portal=".portals">
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger>
           <button>open me</button>
@@ -301,9 +301,9 @@ describe('<Trigger>', () => {
   it('should have openClass and closedClass', () => {
     const result = render(
       <Modal>
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger closedClass="closed" openClass="open">
           <button>open me</button>
@@ -319,9 +319,9 @@ describe('<Trigger>', () => {
   it('should have openStyle and closedStyle', () => {
     const result = render(
       <Modal>
-        <Dialog>
+        <Target>
           <div>Hello world</div>
-        </Dialog>
+        </Target>
 
         <Trigger closedStyle={{display: 'none'}} openStyle={{display: 'block'}}>
           <button>open me</button>
@@ -339,14 +339,14 @@ describe('<Close>', () => {
   it('should close the modal', () => {
     const result = render(
       <Modal defaultOpen={true}>
-        <Dialog>
+        <Target>
           <div>
             <Close>
               <button data-testid="close">Close me</button>
             </Close>
             Hello world
           </div>
-        </Dialog>
+        </Target>
 
         <Trigger closedClass="closed" openClass="open">
           <button>open me</button>

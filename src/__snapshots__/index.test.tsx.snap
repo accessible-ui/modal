@@ -5,15 +5,13 @@ exports[`<Close> should close the modal 1`] = `
   <div
     aria-hidden="false"
     aria-modal="false"
-    class="modal--open"
-    id="modal--34"
+    id="collapse--15"
     role="dialog"
     style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
   >
     <button
-      aria-controls="modal--34"
+      aria-controls="collapse--15"
       aria-expanded="true"
-      aria-haspopup="dialog"
       aria-label="Close"
       data-testid="close"
     >
@@ -22,7 +20,7 @@ exports[`<Close> should close the modal 1`] = `
     Hello world
   </div>
   <button
-    aria-controls="modal--34"
+    aria-controls="collapse--15"
     aria-expanded="true"
     aria-haspopup="dialog"
     class="open"
@@ -37,14 +35,13 @@ exports[`<Close> should close the modal: closed 1`] = `
   <div
     aria-hidden="true"
     aria-modal="false"
-    id="modal--34"
+    id="collapse--15"
     role="dialog"
     style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
   >
     <button
-      aria-controls="modal--34"
+      aria-controls="collapse--15"
       aria-expanded="false"
-      aria-haspopup="dialog"
       aria-label="Close"
       data-testid="close"
     >
@@ -53,590 +50,10 @@ exports[`<Close> should close the modal: closed 1`] = `
     Hello world
   </div>
   <button
-    aria-controls="modal--34"
+    aria-controls="collapse--15"
     aria-expanded="false"
     aria-haspopup="dialog"
     class="closed"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should act like a controlled component when 'open' prop is specified: closed 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--20"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--20"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should act like a controlled component when 'open' prop is specified: initially open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--20"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--20"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should act like a controlled component when 'open' prop is specified: still closed 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--20"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--20"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should act like a controlled component when 'open' prop is specified: still open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--20"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--20"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should apply custom classname when opened or closed 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    class="custom"
-    id="modal--12"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--12"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should apply custom classname when opened or closed: open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="custom modal--open"
-    id="modal--12"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--12"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should apply user defined openClass and closedClass 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    class="closed"
-    id="modal--14"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--14"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should apply user defined openClass and closedClass: open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="open"
-    id="modal--14"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--14"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should apply user defined openStyle and closedStyle 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--16"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1; display: none;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--16"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should apply user defined openStyle and closedStyle: open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--16"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1; display: block;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--16"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should assign to custom styles when opened or closed 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--10"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1; font-size: 2rem;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--10"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should assign to custom styles when opened or closed: open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--10"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1; font-size: 2rem;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--10"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should be initially open when defined as such: closed 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--18"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--18"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should be initially open when defined as such: initially open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--18"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--18"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should close on escape key: closed 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--5"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--5"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should close on escape key: closed initially 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--5"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--5"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should close on escape key: open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--5"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--5"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should open and close on Trigger click: closed 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--2"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--2"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should open and close on Trigger click: closed initially 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--2"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--2"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should open and close on Trigger click: open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--2"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--2"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> should render into a portal by custom selector 1`] = `
-<body>
-  <div
-    class="portals"
-  >
-    <div
-      aria-hidden="false"
-      aria-modal="false"
-      class="modal--open"
-      id="modal--28"
-      role="dialog"
-      style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-    >
-      Hello world
-    </div>
-  </div>
-  <div>
-    <button
-      aria-controls="modal--28"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-    >
-      open me
-    </button>
-  </div>
-</body>
-`;
-
-exports[`<Dialog> should render into a portal by custom selector object 1`] = `
-<body>
-  <div
-    class="portals"
-  >
-    <div
-      aria-hidden="false"
-      aria-modal="false"
-      class="modal--open"
-      id="modal--26"
-      role="dialog"
-      style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-    >
-      Hello world
-    </div>
-  </div>
-  <div>
-    <button
-      aria-controls="modal--26"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-    >
-      open me
-    </button>
-  </div>
-</body>
-`;
-
-exports[`<Dialog> should render into a portal by default ID 1`] = `
-<body>
-  <div
-    id="portals"
-  >
-    <div
-      aria-hidden="false"
-      aria-modal="false"
-      class="modal--open"
-      id="modal--24"
-      role="dialog"
-      style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-    >
-      Hello world
-    </div>
-  </div>
-  <div>
-    <button
-      aria-controls="modal--24"
-      aria-expanded="true"
-      aria-haspopup="dialog"
-    >
-      open me
-    </button>
-  </div>
-</body>
-`;
-
-exports[`<Dialog> shouldn't close on escape key if prop is false: closed initially 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="true"
-    aria-modal="false"
-    id="modal--8"
-    role="dialog"
-    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--8"
-    aria-expanded="false"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> shouldn't close on escape key if prop is false: open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--8"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--8"
-    aria-expanded="true"
-    aria-haspopup="dialog"
-  >
-    open me
-  </button>
-</DocumentFragment>
-`;
-
-exports[`<Dialog> shouldn't close on escape key if prop is false: still open 1`] = `
-<DocumentFragment>
-  <div
-    aria-hidden="false"
-    aria-modal="false"
-    class="modal--open"
-    id="modal--8"
-    role="dialog"
-    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
-  >
-    Hello world
-  </div>
-  <button
-    aria-controls="modal--8"
-    aria-expanded="true"
-    aria-haspopup="dialog"
   >
     open me
   </button>
@@ -648,14 +65,14 @@ exports[`<Modal> should have a custom id 1`] = `
   <div
     aria-hidden="true"
     aria-modal="false"
-    id="modal--foobar"
+    id="collapse--foobar"
     role="dialog"
     style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
   >
     Hello world
   </div>
   <button
-    aria-controls="modal--foobar"
+    aria-controls="collapse--foobar"
     aria-expanded="false"
     aria-haspopup="dialog"
   >
@@ -667,11 +84,579 @@ exports[`<Modal> should have a custom id 1`] = `
 exports[`<Modal> should provide context to function child 1`] = `
 Object {
   "close": [Function],
-  "id": "modal--1",
+  "id": "collapse--0",
   "isOpen": false,
   "open": [Function],
   "toggle": [Function],
 }
+`;
+
+exports[`<Target> should act like a controlled component when 'open' prop is specified: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--9"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--9"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should act like a controlled component when 'open' prop is specified: initially open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--9"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--9"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should act like a controlled component when 'open' prop is specified: still closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--9"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--9"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should act like a controlled component when 'open' prop is specified: still open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--9"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--9"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should apply custom classname when opened or closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    class="custom"
+    id="collapse--5"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--5"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should apply custom classname when opened or closed: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="custom"
+    id="collapse--5"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--5"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should apply user defined openClass and closedClass 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    class="closed"
+    id="collapse--6"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--6"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should apply user defined openClass and closedClass: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    class="open"
+    id="collapse--6"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--6"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should apply user defined openStyle and closedStyle 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--7"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1; display: none;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--7"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should apply user defined openStyle and closedStyle: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--7"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1; display: block;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--7"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should assign to custom styles when opened or closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--4"
+    role="dialog"
+    style="visibility: hidden; font-size: 2rem; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--4"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should assign to custom styles when opened or closed: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--4"
+    role="dialog"
+    style="visibility: visible; font-size: 2rem; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--4"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should be initially open when defined as such: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--8"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--8"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should be initially open when defined as such: initially open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--8"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--8"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should close on escape key: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--2"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--2"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should close on escape key: closed initially 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--2"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--2"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should close on escape key: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--2"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--2"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should open and close on Trigger click: closed 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--1"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--1"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should open and close on Trigger click: closed initially 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--1"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--1"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should open and close on Trigger click: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--1"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--1"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> should render into a portal by custom selector 1`] = `
+<body>
+  <div
+    class="portals"
+  >
+    <div
+      aria-hidden="false"
+      aria-modal="false"
+      id="collapse--12"
+      role="dialog"
+      style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+    >
+      Hello world
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="collapse--12"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+    >
+      open me
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<Target> should render into a portal by custom selector object 1`] = `
+<body>
+  <div
+    class="portals"
+  >
+    <div
+      aria-hidden="false"
+      aria-modal="false"
+      id="collapse--11"
+      role="dialog"
+      style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+    >
+      Hello world
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="collapse--11"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+    >
+      open me
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<Target> should render into a portal by default ID 1`] = `
+<body>
+  <div
+    id="portals"
+  >
+    <div
+      aria-hidden="false"
+      aria-modal="false"
+      id="collapse--10"
+      role="dialog"
+      style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+    >
+      Hello world
+    </div>
+  </div>
+  <div>
+    <button
+      aria-controls="collapse--10"
+      aria-expanded="true"
+      aria-haspopup="dialog"
+    >
+      open me
+    </button>
+  </div>
+</body>
+`;
+
+exports[`<Target> shouldn't close on escape key if prop is false: closed initially 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="collapse--3"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--3"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> shouldn't close on escape key if prop is false: open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--3"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--3"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
+`;
+
+exports[`<Target> shouldn't close on escape key if prop is false: still open 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="false"
+    aria-modal="false"
+    id="collapse--3"
+    role="dialog"
+    style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
+  >
+    Hello world
+  </div>
+  <button
+    aria-controls="collapse--3"
+    aria-expanded="true"
+    aria-haspopup="dialog"
+  >
+    open me
+  </button>
+</DocumentFragment>
 `;
 
 exports[`<Trigger> should have openClass and closedClass 1`] = `
@@ -679,14 +664,14 @@ exports[`<Trigger> should have openClass and closedClass 1`] = `
   <div
     aria-hidden="true"
     aria-modal="false"
-    id="modal--30"
+    id="collapse--13"
     role="dialog"
     style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
   >
     Hello world
   </div>
   <button
-    aria-controls="modal--30"
+    aria-controls="collapse--13"
     aria-expanded="false"
     aria-haspopup="dialog"
     class="closed"
@@ -701,15 +686,14 @@ exports[`<Trigger> should have openClass and closedClass: open 1`] = `
   <div
     aria-hidden="false"
     aria-modal="false"
-    class="modal--open"
-    id="modal--30"
+    id="collapse--13"
     role="dialog"
     style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
   >
     Hello world
   </div>
   <button
-    aria-controls="modal--30"
+    aria-controls="collapse--13"
     aria-expanded="true"
     aria-haspopup="dialog"
     class="open"
@@ -724,14 +708,14 @@ exports[`<Trigger> should have openStyle and closedStyle 1`] = `
   <div
     aria-hidden="true"
     aria-modal="false"
-    id="modal--32"
+    id="collapse--14"
     role="dialog"
     style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
   >
     Hello world
   </div>
   <button
-    aria-controls="modal--32"
+    aria-controls="collapse--14"
     aria-expanded="false"
     aria-haspopup="dialog"
     style="display: none;"
@@ -746,15 +730,14 @@ exports[`<Trigger> should have openStyle and closedStyle: open 1`] = `
   <div
     aria-hidden="false"
     aria-modal="false"
-    class="modal--open"
-    id="modal--32"
+    id="collapse--14"
     role="dialog"
     style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0); z-index: 1;"
   >
     Hello world
   </div>
   <button
-    aria-controls="modal--32"
+    aria-controls="collapse--14"
     aria-expanded="true"
     aria-haspopup="dialog"
     style="display: block;"
@@ -767,7 +750,7 @@ exports[`<Trigger> should have openStyle and closedStyle: open 1`] = `
 exports[`useModal() should return context 1`] = `
 Object {
   "close": [Function],
-  "id": "modal--38",
+  "id": "collapse--18",
   "isOpen": false,
   "open": [Function],
   "toggle": [Function],

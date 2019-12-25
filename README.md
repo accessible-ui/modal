@@ -35,7 +35,7 @@ An accessible and versatile modal component for React
 
 - **Style-agnostic** You can use this component with the styling library of your choice. It
   works with CSS-in-JS, SASS, plain CSS, plain `style` objects, anything!
-- **Portal-friendly** The modal dialog will render into React portals of your choice when configured
+- **Portal-friendly** The modal target will render into React portals of your choice when configured
   to do so.
 - **a11y/aria-compliant** This component works with screen readers out of the box and manages
   focus for you.
@@ -45,17 +45,17 @@ An accessible and versatile modal component for React
 [Check out the example on CodeSandbox](https://codesandbox.io/s/accessiblemodal-example-v4koo)
 
 ```jsx harmony
-import {Modal, Dialog, Trigger, Close} from '@accessible/modal'
+import {Modal, Target, Trigger, Close} from '@accessible/modal'
 
 const Component = () => (
   <Modal>
-    <Dialog>
+    <Target>
       <div className="my-modal">
         <Close>
           <button>Close me</button>
         </Close>
       </div>
-    </Dialog>
+    </Target>
 
     <Trigger>
       <button>Open me</button>
@@ -71,7 +71,7 @@ const Component = () => (
 | Component               | Description                                                                                                  |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------ |
 | [`<Modal>`](#modal)     | This component creates the context for your modal box and trigger and contains some configuration options.   |
-| [`<Dialog>`](#dialog)   | This component wraps any React element and turns it into a modal box.                                        |
+| [`<Target>`](#target)   | This component wraps any React element and turns it into a modal box.                                        |
 | [`<Trigger>`](#trigger) | This component wraps any React element and turns it into a modal trigger.                                    |
 | [`<Close>`](#close)     | This is a convenience component that wraps any React element and adds an onClick handler to close the modal. |  |
 
@@ -97,9 +97,9 @@ configuration options.
 | id          | `string`                                                                                                                          | `undefined` | No        | By default this component creates a unique id for you, as it is required for certain aria attributes. Supplying an id here overrides the auto id feature.                         |
 | children    | <code>React.ReactNode &#124; React.ReactNode[] &#124; JSX.Element &#124; ((context: ModalContextValue) => React.ReactNode)</code> | `undefined` | No        | Your modal contents and any other children.                                                                                                                                       |
 
-### `<Dialog>`
+### `<Target>`
 
-This component wraps any React element and turns it into a modal dialog.
+This component wraps any React element and turns it into a modal target.
 
 #### Props
 
@@ -116,9 +116,9 @@ This component wraps any React element and turns it into a modal dialog.
 #### Example
 
 ```jsx harmony
-<Dialog>
+<Target>
   <div className="alert">Alert</div>
-</Dialog>
+</Target>
 
 // <div
 //   class="alert"
@@ -135,7 +135,7 @@ This component wraps any React element and turns it into a modal dialog.
 ### `<Trigger>`
 
 This component wraps any React element and adds an `onClick` handler which toggles the open state
-of the modal dialog.
+of the modal target.
 
 #### Props
 
@@ -180,7 +180,6 @@ This is a convenience component that wraps any React element and adds an onClick
 // <button
 //   class="my-button"
 //   aria-controls="modal--12"
-//   aria-haspopup="dialog"
 //   aria-expanded="false"
 // >
 //   Close me
@@ -222,11 +221,11 @@ This hook provides access to the modal's `open`, `close`, and `toggle` functions
 const Component = () => {
   const {open, close, toggle} = useControls()
   return (
-    <Dialog>
+    <Target>
       <div className="my-modal">
         <button onClick={close}>Close me</button>
       </div>
-    </Dialog>
+    </Target>
   )
 }
 ```
@@ -241,9 +240,9 @@ This hook provides access to the modal's `isOpen` value
 const Component = () => {
   const isOpen = useIsOpen()
   return (
-    <Dialog>
+    <Target>
       <div className="my-modal">Am I open? {isOpen ? 'Yes' : 'No'}</div>
-    </Dialog>
+    </Target>
   )
 }
 ```
