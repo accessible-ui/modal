@@ -1,6 +1,6 @@
 {
   "name": "@accessible/modal",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "homepage": "https://github.com/accessible-ui/modal#readme",
   "repository": "github:accessible-ui/modal",
   "bugs": "https://github.com/accessible-ui/modal/issues",
@@ -82,7 +82,7 @@
     "typescript": "latest"
   },
   "dependencies": {
-    "@accessible/collapse": "^1.0.5"
+    "@accessible/collapse": "^1.0.9"
   },
   "peerDependencies": {
     "prop-types": ">=15.7.2",
