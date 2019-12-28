@@ -14,6 +14,8 @@ exports[`<Close> should close the modal 1`] = `
       aria-expanded="true"
       aria-label="Close"
       data-testid="close"
+      role="button"
+      tabindex="0"
     >
       Close me
     </button>
@@ -24,6 +26,8 @@ exports[`<Close> should close the modal 1`] = `
     aria-expanded="true"
     aria-haspopup="dialog"
     class="open"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -44,6 +48,8 @@ exports[`<Close> should close the modal: closed 1`] = `
       aria-expanded="false"
       aria-label="Close"
       data-testid="close"
+      role="button"
+      tabindex="0"
     >
       Close me
     </button>
@@ -54,6 +60,8 @@ exports[`<Close> should close the modal: closed 1`] = `
     aria-expanded="false"
     aria-haspopup="dialog"
     class="closed"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -75,6 +83,8 @@ exports[`<Modal> should have a custom id 1`] = `
     aria-controls="foobar"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -106,6 +116,8 @@ exports[`<Target> should act like a controlled component when 'open' prop is spe
     aria-controls="🅰10"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -127,6 +139,8 @@ exports[`<Target> should act like a controlled component when 'open' prop is spe
     aria-controls="🅰10"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -148,6 +162,8 @@ exports[`<Target> should act like a controlled component when 'open' prop is spe
     aria-controls="🅰10"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -169,6 +185,8 @@ exports[`<Target> should act like a controlled component when 'open' prop is spe
     aria-controls="🅰10"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -191,6 +209,8 @@ exports[`<Target> should apply custom classname when opened or closed 1`] = `
     aria-controls="🅰6"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -213,6 +233,8 @@ exports[`<Target> should apply custom classname when opened or closed: open 1`] 
     aria-controls="🅰6"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -235,6 +257,8 @@ exports[`<Target> should apply user defined openClass and closedClass 1`] = `
     aria-controls="🅰7"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -257,6 +281,8 @@ exports[`<Target> should apply user defined openClass and closedClass: open 1`] 
     aria-controls="🅰7"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -278,6 +304,8 @@ exports[`<Target> should apply user defined openStyle and closedStyle 1`] = `
     aria-controls="🅰8"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -299,6 +327,8 @@ exports[`<Target> should apply user defined openStyle and closedStyle: open 1`] 
     aria-controls="🅰8"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -320,6 +350,8 @@ exports[`<Target> should assign to custom styles when opened or closed 1`] = `
     aria-controls="🅰5"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -341,6 +373,8 @@ exports[`<Target> should assign to custom styles when opened or closed: open 1`]
     aria-controls="🅰5"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -362,6 +396,8 @@ exports[`<Target> should be initially open when defined as such: closed 1`] = `
     aria-controls="🅰9"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -383,6 +419,8 @@ exports[`<Target> should be initially open when defined as such: initially open 
     aria-controls="🅰9"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -404,6 +442,8 @@ exports[`<Target> should close on escape key: closed 1`] = `
     aria-controls="🅰3"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -425,6 +465,8 @@ exports[`<Target> should close on escape key: closed initially 1`] = `
     aria-controls="🅰3"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -446,6 +488,8 @@ exports[`<Target> should close on escape key: open 1`] = `
     aria-controls="🅰3"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -467,6 +511,8 @@ exports[`<Target> should open and close on Trigger click: closed 1`] = `
     aria-controls="🅰2"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -488,6 +534,8 @@ exports[`<Target> should open and close on Trigger click: closed initially 1`] =
     aria-controls="🅰2"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -509,6 +557,8 @@ exports[`<Target> should open and close on Trigger click: open 1`] = `
     aria-controls="🅰2"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -535,6 +585,8 @@ exports[`<Target> should render into a portal by custom selector 1`] = `
       aria-controls="🅰13"
       aria-expanded="true"
       aria-haspopup="dialog"
+      role="button"
+      tabindex="0"
     >
       open me
     </button>
@@ -562,6 +614,8 @@ exports[`<Target> should render into a portal by custom selector object 1`] = `
       aria-controls="🅰12"
       aria-expanded="true"
       aria-haspopup="dialog"
+      role="button"
+      tabindex="0"
     >
       open me
     </button>
@@ -589,6 +643,8 @@ exports[`<Target> should render into a portal by default ID 1`] = `
       aria-controls="🅰11"
       aria-expanded="true"
       aria-haspopup="dialog"
+      role="button"
+      tabindex="0"
     >
       open me
     </button>
@@ -611,6 +667,8 @@ exports[`<Target> shouldn't close on escape key if prop is false: closed initial
     aria-controls="🅰4"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -632,6 +690,8 @@ exports[`<Target> shouldn't close on escape key if prop is false: open 1`] = `
     aria-controls="🅰4"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -653,6 +713,8 @@ exports[`<Target> shouldn't close on escape key if prop is false: still open 1`]
     aria-controls="🅰4"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -675,6 +737,8 @@ exports[`<Trigger> should have openClass and closedClass 1`] = `
     aria-expanded="false"
     aria-haspopup="dialog"
     class="closed"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -697,6 +761,8 @@ exports[`<Trigger> should have openClass and closedClass: open 1`] = `
     aria-expanded="true"
     aria-haspopup="dialog"
     class="open"
+    role="button"
+    tabindex="0"
   >
     open me
   </button>
@@ -718,7 +784,9 @@ exports[`<Trigger> should have openStyle and closedStyle 1`] = `
     aria-controls="🅰15"
     aria-expanded="false"
     aria-haspopup="dialog"
+    role="button"
     style="display: none;"
+    tabindex="0"
   >
     open me
   </button>
@@ -740,7 +808,9 @@ exports[`<Trigger> should have openStyle and closedStyle: open 1`] = `
     aria-controls="🅰15"
     aria-expanded="true"
     aria-haspopup="dialog"
+    role="button"
     style="display: block;"
+    tabindex="0"
   >
     open me
   </button>

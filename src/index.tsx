@@ -43,11 +43,10 @@ export const Target: FC<TargetProps> = props => {
     CollapseTarget,
     props,
     cloneElement(props.children, {
-      role: childProps.role === void 0 ? 'dialog' : childProps.role,
-      'aria-modal':
-        childProps['aria-modal'] === void 0
-          ? 'false'
-          : childProps['aria-modal'],
+      role: childProps.hasOwnProperty('role') ? childProps.role : 'dialog',
+      'aria-modal': childProps.hasOwnProperty('aria-modal')
+        ? childProps['aria-modal']
+        : 'false',
       style: Object.assign({}, props.children.props.style, defaultStyles),
     })
   )
@@ -59,10 +58,9 @@ export const Trigger: FC<TriggerProps> = props => {
     CollapseTrigger,
     props,
     cloneElement(props.children, {
-      'aria-haspopup':
-        childProps['aria-haspopup'] === void 0
-          ? 'dialog'
-          : childProps['aria-haspopup'],
+      'aria-haspopup': childProps.hasOwnProperty('aria-haspopup')
+        ? childProps['aria-haspopup']
+        : 'dialog',
     })
   )
 }

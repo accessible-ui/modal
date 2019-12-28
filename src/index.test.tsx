@@ -12,6 +12,12 @@ import {
   useModal,
 } from './index'
 
+const click_ = fireEvent.click
+fireEvent.click = (...args) => {
+  fireEvent.mouseDown(...args)
+  return click_(...args)
+}
+
 describe('<Modal>', () => {
   it('should have a custom id', () => {
     const result = render(
@@ -82,7 +88,10 @@ describe('<Target>', () => {
     expect(result.asFragment()).toMatchSnapshot('closed initially')
     fireEvent.click(result.getByText('open me'))
     expect(result.asFragment()).toMatchSnapshot('open')
-    fireEvent.keyUp(result.getByText('Hello world'), {key: 'Escape', code: 27})
+    fireEvent.keyDown(result.getByText('Hello world'), {
+      key: 'Escape',
+      code: 27,
+    })
     expect(result.asFragment()).toMatchSnapshot('closed')
   })
 
@@ -102,7 +111,10 @@ describe('<Target>', () => {
     expect(result.asFragment()).toMatchSnapshot('closed initially')
     fireEvent.click(result.getByText('open me'))
     expect(result.asFragment()).toMatchSnapshot('open')
-    fireEvent.keyUp(result.getByText('Hello world'), {key: 'Escape', code: 27})
+    fireEvent.keyDown(result.getByText('Hello world'), {
+      key: 'Escape',
+      code: 27,
+    })
     expect(result.asFragment()).toMatchSnapshot('still open')
   })
 

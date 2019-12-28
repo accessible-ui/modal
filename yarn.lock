@@ -2,14 +2,23 @@
 # yarn lockfile v1
 
 
-"@accessible/collapse@^1.0.9":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@accessible/collapse/-/collapse-1.0.9.tgz#7bcf5b88996054ed0081e97f24801c3ab98378de"
-  integrity sha512-rQoNarQu6j8Yn5FC97EHmSEQcBITNUmUp03UpP9eqUKYzZDsfG+dg6E3IzGUfsECyBdImS1Z8VAk/GoIsJwZgg==
+"@accessible/button@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@accessible/button/-/button-1.0.2.tgz#92067ab0343bbd9d57bec4bbae65df7d71729a98"
+  integrity sha512-H2j5WeOhcUl5TixG/S36X+YWFYAlLgI6+0I0lEYSqF0wSPBhb6y6brPDw4avQAwv1QAvCyWpRyLYmZ1+sjDMpA==
   dependencies:
+    "@accessible/use-keycode" "^2.0.0"
+    "@react-hook/merged-ref" "^1.0.8"
+
+"@accessible/collapse@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@accessible/collapse/-/collapse-1.0.11.tgz#df23071dee2c445a6193c2f8ac94bebf67ddb12e"
+  integrity sha512-CRZMDTNhWS6kACJhQwXPAiwu/BS3eWd1Tp1bNwaRiTWzC4oHNytMU8J6hFR4IG4/kKCE7W/VDc+7mSqyNLbQ0g==
+  dependencies:
+    "@accessible/button" "^1.0.2"
     "@accessible/use-conditional-focus" "^1.0.0"
     "@accessible/use-id" "^1.0.3"
-    "@accessible/use-keycode" "^1.0.2"
+    "@accessible/use-keycode" "^2.0.0"
     "@react-hook/merged-ref" "^1.0.7"
     "@react-hook/passive-layout-effect" "^1.0.2"
     "@react-hook/switch" "^1.0.4"
@@ -37,10 +46,10 @@
   dependencies:
     "@react-hook/passive-layout-effect" "^1.0.2"
 
-"@accessible/use-keycode@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@accessible/use-keycode/-/use-keycode-1.0.2.tgz#48c33e70d015fe2e3c8753a0433750b9e4ef6a26"
-  integrity sha512-lduCksS4x4AWZsG3XCcaAuEs9IkbJoWjDhA4wpzKXhnl2hMNdZnstdxHYnyu+nnq8V/dpuC9yopZ9uXaLoBUVQ==
+"@accessible/use-keycode@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@accessible/use-keycode/-/use-keycode-2.0.0.tgz#9fbaf02a9b345ffd86a62f231c30789c3860e237"
+  integrity sha512-pvcrkiMlRaCmh1luRlfSxdDKjElQiPNvaBmY1cibRopgBYXN94cqJXAequOn3cFWxsbhLVxfbdq+x/ocp5+q3w==
   dependencies:
     "@react-hook/passive-layout-effect" "^1.0.2"
 
@@ -1117,7 +1126,7 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@react-hook/merged-ref@^1.0.7":
+"@react-hook/merged-ref@^1.0.7", "@react-hook/merged-ref@^1.0.8":
   version "1.0.8"
   resolved "https://registry.yarnpkg.com/@react-hook/merged-ref/-/merged-ref-1.0.8.tgz#146deba739df2724f76f4e8a29adbae0e1724994"
   integrity sha512-ae3HwS/zCDZqoeLliqBPfHc5DeX3bhAR2rsZ2JpDm68c6Lvx05Hs5SOQIQSaRQIsGzFTinoI2TO7LyOcD8s23g==
