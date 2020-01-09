@@ -5,12 +5,12 @@ exports[`<Close> should close the modal 1`] = `
   <div
     aria-hidden="false"
     aria-modal="false"
-    id="🅰16"
+    id="🅰19"
     role="dialog"
     style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
   >
     <button
-      aria-controls="🅰16"
+      aria-controls="🅰19"
       aria-expanded="true"
       aria-label="Close"
       data-testid="close"
@@ -22,7 +22,7 @@ exports[`<Close> should close the modal 1`] = `
     Hello world
   </div>
   <button
-    aria-controls="🅰16"
+    aria-controls="🅰19"
     aria-expanded="true"
     aria-haspopup="dialog"
     class="open"
@@ -39,12 +39,12 @@ exports[`<Close> should close the modal: closed 1`] = `
   <div
     aria-hidden="true"
     aria-modal="false"
-    id="🅰16"
+    id="🅰19"
     role="dialog"
     style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
   >
     <button
-      aria-controls="🅰16"
+      aria-controls="🅰19"
       aria-expanded="false"
       aria-label="Close"
       data-testid="close"
@@ -56,7 +56,7 @@ exports[`<Close> should close the modal: closed 1`] = `
     Hello world
   </div>
   <button
-    aria-controls="🅰16"
+    aria-controls="🅰19"
     aria-expanded="false"
     aria-haspopup="dialog"
     class="closed"
@@ -565,6 +565,35 @@ exports[`<Target> should open and close on Trigger click: open 1`] = `
 </DocumentFragment>
 `;
 
+exports[`<Target> should override aria-modal 1`] = `
+<DocumentFragment>
+  <div
+    aria-controls="🅰15"
+    aria-expanded="false"
+    aria-haspopup="dialog"
+    aria-modal="true"
+    role="button"
+    tabindex="0"
+  >
+    Hello world
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<Target> should override role 1`] = `
+<DocumentFragment>
+  <div
+    aria-hidden="true"
+    aria-modal="false"
+    id="🅰14"
+    role="other-role"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
+  >
+    Hello world
+  </div>
+</DocumentFragment>
+`;
+
 exports[`<Target> should render into a portal by custom selector 1`] = `
 <body>
   <div
@@ -726,14 +755,14 @@ exports[`<Trigger> should have openClass and closedClass 1`] = `
   <div
     aria-hidden="true"
     aria-modal="false"
-    id="🅰14"
+    id="🅰16"
     role="dialog"
     style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
   >
     Hello world
   </div>
   <button
-    aria-controls="🅰14"
+    aria-controls="🅰16"
     aria-expanded="false"
     aria-haspopup="dialog"
     class="closed"
@@ -750,14 +779,14 @@ exports[`<Trigger> should have openClass and closedClass: open 1`] = `
   <div
     aria-hidden="false"
     aria-modal="false"
-    id="🅰14"
+    id="🅰16"
     role="dialog"
     style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
   >
     Hello world
   </div>
   <button
-    aria-controls="🅰14"
+    aria-controls="🅰16"
     aria-expanded="true"
     aria-haspopup="dialog"
     class="open"
@@ -774,14 +803,14 @@ exports[`<Trigger> should have openStyle and closedStyle 1`] = `
   <div
     aria-hidden="true"
     aria-modal="false"
-    id="🅰15"
+    id="🅰17"
     role="dialog"
     style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
   >
     Hello world
   </div>
   <button
-    aria-controls="🅰15"
+    aria-controls="🅰17"
     aria-expanded="false"
     aria-haspopup="dialog"
     role="button"
@@ -798,14 +827,14 @@ exports[`<Trigger> should have openStyle and closedStyle: open 1`] = `
   <div
     aria-hidden="false"
     aria-modal="false"
-    id="🅰15"
+    id="🅰17"
     role="dialog"
     style="visibility: visible; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
   >
     Hello world
   </div>
   <button
-    aria-controls="🅰15"
+    aria-controls="🅰17"
     aria-expanded="true"
     aria-haspopup="dialog"
     role="button"
@@ -817,10 +846,24 @@ exports[`<Trigger> should have openStyle and closedStyle: open 1`] = `
 </DocumentFragment>
 `;
 
+exports[`<Trigger> should override aria-haspopup 1`] = `
+<DocumentFragment>
+  <div
+    aria-controls="🅰18"
+    aria-expanded="false"
+    aria-haspopup="grid"
+    role="button"
+    tabindex="0"
+  >
+    Hello world
+  </div>
+</DocumentFragment>
+`;
+
 exports[`useModal() should return context 1`] = `
 Object {
   "close": [Function],
-  "id": "🅰19",
+  "id": "🅰22",
   "isOpen": false,
   "open": [Function],
   "toggle": [Function],

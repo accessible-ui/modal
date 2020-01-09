@@ -307,6 +307,30 @@ describe('<Target>', () => {
     expect(result.baseElement).toMatchSnapshot()
     document.body.removeChild(portalRoot)
   })
+
+  it('should override role', () => {
+    const result = render(
+      <Modal>
+        <Target>
+          <div role='other-role'>Hello world</div>
+        </Target>
+      </Modal>
+    )
+
+    expect(result.asFragment()).toMatchSnapshot()
+  })
+
+  it('should override aria-modal', () => {
+    const result = render(
+      <Modal>
+        <Trigger>
+          <div aria-modal='true'>Hello world</div>
+        </Trigger>
+      </Modal>
+    )
+
+    expect(result.asFragment()).toMatchSnapshot()
+  })
 })
 
 describe('<Trigger>', () => {
@@ -344,6 +368,18 @@ describe('<Trigger>', () => {
     expect(result.asFragment()).toMatchSnapshot()
     fireEvent.click(result.getByText('open me'))
     expect(result.asFragment()).toMatchSnapshot('open')
+  })
+
+  it('should override aria-haspopup', () => {
+    const result = render(
+      <Modal>
+        <Trigger>
+          <div aria-haspopup='grid'>Hello world</div>
+        </Trigger>
+      </Modal>
+    )
+
+    expect(result.asFragment()).toMatchSnapshot()
   })
 })
 
