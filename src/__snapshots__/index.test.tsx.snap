@@ -568,12 +568,11 @@ exports[`<Target> should open and close on Trigger click: open 1`] = `
 exports[`<Target> should override aria-modal 1`] = `
 <DocumentFragment>
   <div
-    aria-controls="🅰15"
-    aria-expanded="false"
-    aria-haspopup="dialog"
+    aria-hidden="true"
     aria-modal="true"
-    role="button"
-    tabindex="0"
+    id="🅰15"
+    role="dialog"
+    style="visibility: hidden; position: fixed; margin: auto; left: 50%; top: 50%; transform: translate3d(-50%, -50%, 0);"
   >
     Hello world
   </div>

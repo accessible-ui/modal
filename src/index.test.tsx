@@ -312,7 +312,7 @@ describe('<Target>', () => {
     const result = render(
       <Modal>
         <Target>
-          <div role='other-role'>Hello world</div>
+          <div role="other-role">Hello world</div>
         </Target>
       </Modal>
     )
@@ -323,9 +323,9 @@ describe('<Target>', () => {
   it('should override aria-modal', () => {
     const result = render(
       <Modal>
-        <Trigger>
-          <div aria-modal='true'>Hello world</div>
-        </Trigger>
+        <Target>
+          <div aria-modal="true">Hello world</div>
+        </Target>
       </Modal>
     )
 
@@ -374,7 +374,7 @@ describe('<Trigger>', () => {
     const result = render(
       <Modal>
         <Trigger>
-          <div aria-haspopup='grid'>Hello world</div>
+          <div aria-haspopup="grid">Hello world</div>
         </Trigger>
       </Modal>
     )
