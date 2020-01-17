@@ -1,33 +1,33 @@
 import {FC, createElement, cloneElement} from 'react'
 import {
-  Target as CollapseTarget,
-  TargetProps as CollapseTargetProps,
-  CollapseControls,
-  CloseProps as CollapseCloseProps,
-  TriggerProps as CollapseTriggerProps,
-  Trigger as CollapseTrigger,
-  CollapseProps,
-  CollapseContextValue,
-} from '@accessible/collapse'
+  Target as DisclosureTarget,
+  TargetProps as DisclosureTargetProps,
+  DisclosureControls,
+  CloseProps as DisclosureCloseProps,
+  TriggerProps as DisclosureTriggerProps,
+  Trigger as DisclosureTrigger,
+  DisclosureProps,
+  DisclosureContextValue,
+} from '@accessible/disclosure'
 export {
-  Collapse as Modal,
-  CollapseContext as ModalContext,
-  CollapseConsumer as ModalConsumer,
-  useCollapse as useModal,
+  Disclosure as Modal,
+  DisclosureContext as ModalContext,
+  DisclosureConsumer as ModalConsumer,
+  useDisclosure as useModal,
   Close,
   useIsOpen,
   useControls,
-} from '@accessible/collapse'
+} from '@accessible/disclosure'
 
 const __DEV__ =
   typeof process !== 'undefined' && process.env.NODE_ENV !== 'production'
 
-export interface ModalContextValue extends CollapseContextValue {}
-export interface ModalProps extends CollapseProps {}
-export interface ModalControls extends CollapseControls {}
-export interface TriggerProps extends CollapseTriggerProps {}
-export interface CloseProps extends CollapseCloseProps {}
-export interface TargetProps extends CollapseTargetProps {}
+export interface ModalContextValue extends DisclosureContextValue {}
+export interface ModalProps extends DisclosureProps {}
+export interface ModalControls extends DisclosureControls {}
+export interface TriggerProps extends DisclosureTriggerProps {}
+export interface CloseProps extends DisclosureCloseProps {}
+export interface TargetProps extends DisclosureTargetProps {}
 
 const defaultStyles = {
   position: 'fixed',
@@ -40,7 +40,7 @@ const defaultStyles = {
 export const Target: FC<TargetProps> = props => {
   const childProps = props.children.props
   return createElement(
-    CollapseTarget,
+    DisclosureTarget,
     props,
     cloneElement(props.children, {
       role: childProps.hasOwnProperty('role') ? childProps.role : 'dialog',
@@ -55,7 +55,7 @@ export const Target: FC<TargetProps> = props => {
 export const Trigger: FC<TriggerProps> = props => {
   const childProps = props.children.props
   return createElement(
-    CollapseTrigger,
+    DisclosureTrigger,
     props,
     cloneElement(props.children, {
       'aria-haspopup': childProps.hasOwnProperty('aria-haspopup')
