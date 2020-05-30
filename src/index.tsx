@@ -1,4 +1,4 @@
-import {FC, createElement, cloneElement} from 'react'
+import * as React from 'react'
 import {
   Target as DisclosureTarget,
   TargetProps as DisclosureTargetProps,
@@ -22,13 +22,6 @@ export {
 const __DEV__ =
   typeof process !== 'undefined' && process.env.NODE_ENV !== 'production'
 
-export interface ModalContextValue extends DisclosureContextValue {}
-export interface ModalProps extends DisclosureProps {}
-export interface ModalControls extends DisclosureControls {}
-export interface TriggerProps extends DisclosureTriggerProps {}
-export interface CloseProps extends DisclosureCloseProps {}
-export interface TargetProps extends DisclosureTargetProps {}
-
 const defaultStyles = {
   position: 'fixed',
   margin: 'auto',
@@ -37,12 +30,12 @@ const defaultStyles = {
   transform: 'translate3d(-50%, -50%, 0)',
 }
 
-export const Target: FC<TargetProps> = props => {
+export const Target: React.FC<TargetProps> = (props) => {
   const childProps = props.children.props
-  return createElement(
+  return React.createElement(
     DisclosureTarget,
     props,
-    cloneElement(props.children, {
+    React.cloneElement(props.children, {
       role: childProps.hasOwnProperty('role') ? childProps.role : 'dialog',
       'aria-modal': childProps.hasOwnProperty('aria-modal')
         ? childProps['aria-modal']
@@ -52,18 +45,25 @@ export const Target: FC<TargetProps> = props => {
   )
 }
 
-export const Trigger: FC<TriggerProps> = props => {
+export const Trigger: React.FC<TriggerProps> = (props) => {
   const childProps = props.children.props
-  return createElement(
+  return React.createElement(
     DisclosureTrigger,
     props,
-    cloneElement(props.children, {
+    React.cloneElement(props.children, {
       'aria-haspopup': childProps.hasOwnProperty('aria-haspopup')
         ? childProps['aria-haspopup']
         : 'dialog',
     })
   )
 }
+
+export interface ModalContextValue extends DisclosureContextValue {}
+export interface ModalProps extends DisclosureProps {}
+export interface ModalControls extends DisclosureControls {}
+export interface TriggerProps extends DisclosureTriggerProps {}
+export interface CloseProps extends DisclosureCloseProps {}
+export interface TargetProps extends DisclosureTargetProps {}
 
 /* istanbul ignore next */
 if (__DEV__) {

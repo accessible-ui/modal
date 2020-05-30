@@ -112,6 +112,7 @@ This component wraps any React element and turns it into a modal target.
 | openClass     | `string`                            | `undefined` | No        | This class name will be applied to the child element when the modal is `open`.                                                                                                                                 |
 | closedStyle   | `React.CSSProperties`               | `undefined` | No        | These styles will be applied to the child element when the modal is `closed` in addition to the default styles that set the box's visibility.                                                                  |
 | openStyle     | `React.CSSProperties`               | `undefined` | No        | These styles name will be applied to the child element when the modal is `open` in addition to the default styles that set the box's visibility.                                                               |
+| preventScroll | `boolean`                           | `false`     | No        | When `true` this will prevent your browser from scrolling the document to bring the newly-focused tab into view.                                                                                               |
 | children      | `React.ReactElement`                | `undefined` | Yes       | The child is cloned by this component and has aria attributes injected into its props as well as the events defined above.                                                                                     |
 
 #### Example

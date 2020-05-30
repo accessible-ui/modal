@@ -40,7 +40,7 @@ describe('<Modal>', () => {
 
     render(
       <Modal>
-        {context => {
+        {(context) => {
           cxt = context
           return <div />
         }}
