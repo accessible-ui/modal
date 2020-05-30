@@ -1,9 +1,9 @@
 {
   "name": "@accessible/modal",
-  "version": "2.2.0",
-  "homepage": "https://github.com/accessible-ui/accessible#readme",
-  "repository": "github:accessible-ui/accessible",
-  "bugs": "https://github.com/accessible-ui/accessible/issues",
+  "version": "2.2.1",
+  "homepage": "https://github.com/accessible-ui/modal#readme",
+  "repository": "github:accessible-ui/modal",
+  "bugs": "https://github.com/accessible-ui/modal/issues",
   "author": "Jared Lunde <jared.lunde@gmail.com> (https://jaredLunde.com)",
   "license": "MIT",
   "description": "An accessible and versatile modal component for React",
