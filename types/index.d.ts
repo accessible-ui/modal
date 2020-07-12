@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { DisclosureProps, DisclosureContextValue, TargetProps, TriggerProps, UseA11yTargetOptions, UseA11yTriggerOptions, UseA11yCloseButtonOptions } from '@accessible/disclosure';
+import type { DisclosureProps, DisclosureContextValue, TargetProps, TriggerProps, CloseButtonProps, UseA11yTargetOptions, UseA11yTriggerOptions, UseA11yCloseButtonOptions } from '@accessible/disclosure';
 /**
  * This hook provides the current value of the modal's context object
  */
@@ -67,10 +67,18 @@ export declare function useA11yTrigger<T extends HTMLElement>(target: React.RefO
     readonly 'aria-haspopup': "dialog";
 };
 /**
- * A React hook for creating a headless disclosure trigger to [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html).
+ * This component wraps any React element and adds an `onClick` handler
+ * which toggles the open state of the disclosure target.
+ */
+export declare function Trigger(props: TriggerProps): React.FunctionComponentElement<TriggerProps>;
+export declare namespace Trigger {
+    var displayName: string;
+}
+/**
+ * A React hook for creating a headless close button to [WAI-ARIA authoring practices](https://www.w3.org/TR/wai-aria-practices/examples/dialog-modal/dialog.html).
  * In addition to providing accessibility props to your component, this
  * hook will add events for interoperability between actual <button> elements
- * and fake ones e.g. <a> and <div> to the target element
+ * and fake ones e.g. <a> and <div> to the target element.
  *
  * @param target A React ref or HTML element
  * @param options Configuration options
@@ -87,14 +95,13 @@ export declare function useA11yCloseButton<T extends HTMLElement>(target: React.
     readonly 'aria-haspopup': "dialog";
 };
 /**
- * This component wraps any React element and adds an `onClick` handler
- * which toggles the open state of the disclosure target.
+ * This is a convenience component that wraps any React element and adds
+ * an onClick handler which closes the disclosure.
  */
-export declare function Trigger(props: TriggerProps): React.FunctionComponentElement<TriggerProps>;
-export declare namespace Trigger {
+export declare function CloseButton(props: CloseButtonProps): React.FunctionComponentElement<CloseButtonProps>;
+export declare namespace CloseButton {
     var displayName: string;
 }
-export { CloseButton } from '@accessible/disclosure';
 export type { TargetProps, TriggerProps, CloseButtonProps, UseA11yTargetOptions, UseA11yTriggerOptions, UseA11yCloseButtonOptions, } from '@accessible/disclosure';
 export interface ModalProps extends DisclosureProps {
 }
