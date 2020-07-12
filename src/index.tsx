@@ -71,7 +71,7 @@ export function Target(props: TargetProps) {
     props,
     React.cloneElement(props.children, {
       role: childProps.hasOwnProperty('role') ? childProps.role : 'dialog',
-      style: Object.assign({}, props.children.props.style, defaultStyles),
+      style: Object.assign({}, childProps.style, defaultStyles),
     })
   )
 }
