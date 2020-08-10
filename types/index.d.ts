@@ -60,7 +60,6 @@ export declare function useA11yTrigger<T extends HTMLElement>(target: React.RefO
     readonly className: string | undefined;
     readonly style: React.CSSProperties | undefined;
 } & {
-    readonly onClick: (event: React.MouseEvent<any, MouseEvent>) => void;
     readonly role: "button";
     readonly tabIndex: 0;
 } & {
@@ -88,7 +87,6 @@ export declare function useA11yCloseButton<T extends HTMLElement>(target: React.
     readonly 'aria-expanded': boolean;
     readonly 'aria-label': "Close";
 } & {
-    readonly onClick: (event: React.MouseEvent<any, MouseEvent>) => void;
     readonly role: "button";
     readonly tabIndex: 0;
 } & {
