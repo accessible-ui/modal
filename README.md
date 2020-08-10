@@ -226,7 +226,7 @@ target element
 #### UseA11yTriggerOptions
 
 ```ts
-export interface UseA11yTriggerOptions<E = React.MouseEvent<any, MouseEvent>> {
+export interface UseA11yTriggerOptions {
   /**
    * Adds this class name to props when the modal is open
    */
@@ -247,7 +247,7 @@ export interface UseA11yTriggerOptions<E = React.MouseEvent<any, MouseEvent>> {
    * Adds an onClick handler in addition to the default one that
    * toggles the modal's open state.
    */
-  onClick?: (e: E) => any
+  onClick?: (e: MouseEvent) => any
 }
 ```
 
@@ -324,14 +324,12 @@ target element
 #### UseA11yCloseButtonOptions
 
 ```ts
-export interface UseA11yCloseButtonOptions<
-  E = React.MouseEvent<any, MouseEvent>
-> {
+export interface UseA11yCloseButtonOptions {
   /**
    * Adds an onClick handler in addition to the default one that
    * closes the modal.
    */
-  onClick?: (e: E) => any
+  onClick?: (e: MouseEvent) => any
 }
 ```
 
