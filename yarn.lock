@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@accessible/button@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@accessible/button/-/button-2.0.1.tgz#3073455aad015171a7bdc0d9e1d2d7032824130b"
-  integrity sha512-zekJdNyYUuln/KzsgK9H2VFkELolA8T0Em5scID5indCRk47CD5rbjcxbVrp+/pd382Dx1iKMNxJFVCi9ZECbA==
+"@accessible/button@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@accessible/button/-/button-2.0.2.tgz#a7a3cb95787bab61c49968728ebc98dbeaa6b4b7"
+  integrity sha512-CXkkEpjUh1nG2yZ13uq2hR+g4IuStIKnNZG9R2lso0rlEpsAUa34V/JXmYLNVitn/dN03/KHfzkX9aJi837l3Q==
   dependencies:
     "@accessible/use-key" "^1.0.2"
     "@react-hook/event" "^1.2.2"
     "@react-hook/merged-ref" "^1.3.0"
 
-"@accessible/disclosure@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@accessible/disclosure/-/disclosure-3.0.1.tgz#0e4d85aee5d37edbed246759f37737d69c34f1d3"
-  integrity sha512-2K7iu8ppJN3YZpFXJqj2X8TsSQttHDN7q8CwHpQ3n7uRkYuvjCYKwUTzLbwBjB1ECAY10xMrYS/pc4ZUSdF+iQ==
+"@accessible/disclosure@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@accessible/disclosure/-/disclosure-3.0.2.tgz#0d686be29aaac7ccb13c366589502770a070f0e2"
+  integrity sha512-KfbdM3Sfh1MI6w1pIb/jcp5T6bSCWcqm+LO14CvZinR03tnUiXj+l6zlynCMh6C9BWbT4+i2hQLyWFSZld0gpA==
   dependencies:
-    "@accessible/button" "^2.0.1"
+    "@accessible/button" "^2.0.2"
     "@accessible/use-conditional-focus" "^3.0.0"
     "@accessible/use-id" "^1.1.1"
     "@accessible/use-key" "^1.0.2"

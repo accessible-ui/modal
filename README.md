@@ -262,7 +262,6 @@ interface A11yProps<E extends React.MouseEvent<any, MouseEvent>> {
   readonly tabIndex: 0
   readonly className: string | undefined
   readonly style: React.CSSProperties | undefined
-  readonly onClick: (event: React.MouseEvent<any, MouseEvent>) => void
 }
 ```
 
@@ -344,7 +343,6 @@ interface A11yProps<E extends React.MouseEvent<any, MouseEvent>> {
   readonly 'aria-controls': string | undefined
   readonly 'aria-expanded': boolean
   readonly 'aria-label': 'Close'
-  readonly onClick: (event: React.MouseEvent<any, MouseEvent>) => void
   readonly role: 'button'
   readonly tabIndex: 0
 }
